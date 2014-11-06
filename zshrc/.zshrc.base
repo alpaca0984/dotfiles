@@ -1,0 +1,82 @@
+####################
+# ベースの設定
+####################
+
+# LANG
+#  - rootユーザはLANG=Cが設定される
+#  - rootユーザ以外はLANG=ja_JP.UTF-8が設定される
+#
+export LANG=ja_JP.UTF-8
+case ${UID} in
+0)
+  # rootの設定
+  LANG=C
+  ;;
+esac
+
+# cdがなくてもディレクトリを変更できる
+setopt auto_cd
+
+# 自動でディレクトリ変更をスタックに保存する。cd -<TAB>でリストが見れる
+setopt auto_pushd
+
+# ミスコマンドを訂正してくれる。『もしかして...』機能
+setopt correct
+
+# 補完候補の一覧が空白を詰めて表示される
+setopt list_packed
+
+# 補完時にディレクトリから末尾のスラッシュを削除して表示する
+setopt noautoremoveslash
+
+# ビープ音を出ないようにする
+setopt nolistbeep
+
+# zshで実装されたエディタをロード
+autoload zed
+
+########################
+# キーバインドの設定
+########################
+
+# Emacs風のキーバインドを有効にする
+bindkey -e
+bindkey "^[[1~" beginning-of-line # Home gets to line head
+bindkey "^[[4~" end-of-line       # End gets to line end
+bindkey "^[[3~" delete-char       # Del
+
+# コマンドの実行履歴をCtrl-p、Ctrl-nで追えるようにする
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "\\ep" history-beginning-search-backward-end
+bindkey "\\en" history-beginning-search-forward-end
+
+# コマンド履歴のパラメータ
+HISTFILE=${HOME}/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+
+# Shift-TABで候補を遡れる
+bindkey "\e[Z" reverse-menu-complete
+
+
+######################
+# 補完機能
+######################
+
+# 強力な補完機能を有効にする
+autoload -U compinit; compinit
+
+
+######################
+# 環境変数
+######################
+
+# 自作の実行スクリプトの格納先
+export PATH=$PATH:$HOME/bin
+

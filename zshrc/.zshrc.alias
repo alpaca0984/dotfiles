@@ -1,0 +1,133 @@
+####################
+# 共通のalias
+####################
+
+# エイリアスでも補完できるようにする
+setopt complete_aliases     # aliased ls needs if file/dir completions work
+
+alias where="command -v"
+alias j="jobs -l"
+
+# OSによって異なるエイリアスをつける
+case "${OSTYPE}" in
+freebsd*|darwin*)
+    alias ls="ls -G -w"
+    ;;
+linux*)
+    alias ls="ls --color"
+    ;;
+esac
+
+# ls系
+alias la="ls -ha"
+alias lf="ls -hF"
+alias ll="ls -halrt"
+
+# ヒューマンエラー防止
+alias rm="rm -i"
+alias mv="mv -i"
+alias crontab="crontab -i"
+
+# ファイル容量などの確認
+alias du="du -h"
+alias df="df -h"
+
+alias su="su -l"
+alias vi="vim"
+
+alias topex="glances"
+
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias tmux="tmux -2"        # vimの色をtmux上で再現するために
+
+alias memo="vim ~/memo"
+
+#######
+# git
+#######
+# リモートで削除されたブランチやタグをローカルに反映する
+alias gitf="git fetch origin --prune"
+alias fetch="fetch --prune"
+
+#######
+# ruby
+#######
+alias be="bundle exec"
+
+# 環境によって異なるaliasの設定
+case `hostname -s` in
+web)
+  # mitraの設定
+  alias mitra="cd /var/www/users/iwasaki/mitra/"
+  alias car="cd /var/www/users/iwasaki/mitra/car/current/"
+  alias cms="cd /var/www/users/iwasaki/mitra/cms/repos/current/"
+  alias move="cd /var/www/users/iwasaki/mitra/move/repos/current/"
+  alias common="cd /var/www/users/iwasaki/mitra/common/repos/current/"
+  alias mnt="cd /mnt/mitra/iwasaki/"
+  alias cash="cd /var/www/users/iwasaki/mitra/cashing/current/"
+  alias jobeet="cd /var/www/users/iwasaki/jobeet/"
+  alias phpcss='phpcs -v --standard=/var/www/users/iwasaki/mitra/car/repos/trunk/tools/phpcs/SymfonyCar'
+  alias phpcssall='phpcs -v --standard=/var/www/users/iwasaki/mitra/car/repos/trunk/tools/phpcs/SymfonyCar lib/util/car* lib/task/* lib/model/* apps/*/modules/*/actions/* --ignore=tools/,Base;ruby /var/www/users/iwasaki/mitra/car/current/tools/YamlScouter/yamlscouter.rb /var/www/users/iwasaki/mitra/car/current/config/project.yml;ruby /var/www/users/iwasaki/mitra/car/current/tools/YamlScouter/filter_yaml_scouter.rb iwasaki;'
+  alias deploy="cd ~/deploy/"
+  alias ssh@web11.hikaku="ssh iwasaki@118.151.188.82"        # web11.hikaku.ig.local
+  alias ssh@web12.hikaku="ssh iwasaki@118.151.188.65"        # web12.hikaku.ig.local
+  alias ssh@rp11.hikaku="ssh iwasaki@118.151.188.196"        # rp11.hikaku.ig.local
+  alias ssh@rp12.hikaku="ssh iwasaki@210.149.144.67"         # rp12.hikaku.ig.local
+  alias ssh@rp13.hikaku="ssh iwasaki@118.151.188.197"        # rp13.hikaku.ig.local
+  alias ssh@task1.hikaku="ssh iwasaki@210.149.146.192"       # task1.hikaku.ig.local
+  alias ssh@web1.cash="ssh iwasaki@118.151.186.36"           # web1.cashing.ig.local
+  alias ssh@web2.cash="ssh iwasaki@118.151.186.41"           # web2.cashing.ig.local
+  alias ssh@web1.common="ssh iwasaki@118.151.188.75"         # web1.life-common.ig.local
+  alias ssh@rp1.at-lifestyle="ssh iwasaki@210.149.131.214"   # rp1.at-lifestyle.ig.local
+  alias ssh@web1.at-lifestyle="ssh iwasaki@210.149.131.173"  # web1.at-lifestyle.ig.local
+  alias tags_php='rm -f ~/.tags.php;find /var/www/users/$USER/mitra/car /usr/local/symfony/symfony-1.4 -name "*.php" -o -name "*.inc" | xargs --verbose ctags -a -f ~/.tags.php -R --langmap=PHP:.php.inc --php-kinds=cdfi --javascript-kinds=f'
+  ;;
+iwasaki01)
+  # hikaku.devの設定
+  alias car="cd /home/iwasaki/git/mitra-car/"
+  alias common="cd /home/iwasaki/git/mitra-common/"
+  alias cash="cd /home/iwasaki/git/cashing/"
+  alias phpcssall='phpcs -v --standard=/home/mitra/git/mitra-car/tools/phpcs/SymfonyCar lib/util/car* lib/task/* lib/model/* apps/*/modules/*/actions/* --ignore=tools/,Base;ruby /home/mitra/git/mitra-car/tools/YamlScouter/yamlscouter.rb /home/mitra/git/mitra-car/config/project.yml;ruby /home/mitra/git/mitra-car/tools/YamlScouter/filter_yaml_scouter.rb iwasaki;'
+  ## dev
+  alias ssh@kvmhost="ssh iwasaki@172.18.3.201"
+  alias ssh@life1="ssh iwasaki@d.life1.dev"
+  alias ssh@life2="ssh iwasaki@d.life2.dev"
+  ## prod
+  alias ssh@web11.hikaku="ssh iwasaki@118.151.188.82"        # web11.hikaku.ig.local
+  alias ssh@web12.hikaku="ssh iwasaki@118.151.188.65"        # web12.hikaku.ig.local
+  alias ssh@rp11.hikaku="ssh iwasaki@118.151.188.196"        # rp11.hikaku.ig.local
+  alias ssh@rp12.hikaku="ssh iwasaki@210.149.144.67"         # rp12.hikaku.ig.local
+  alias ssh@rp13.hikaku="ssh iwasaki@118.151.188.197"        # rp13.hikaku.ig.local
+  alias ssh@task1.hikaku="ssh iwasaki@210.149.146.192"       # task1.hikaku.ig.local
+  alias ssh@web1.cash="ssh iwasaki@118.151.186.36"           # web1.cashing.ig.local
+  alias ssh@web2.cash="ssh iwasaki@118.151.186.41"           # web2.cashing.ig.local
+  alias ssh@web1.common="ssh iwasaki@118.151.188.75"         # web1.life-common.ig.local
+  alias ssh@rp1.at-lifestyle="ssh iwasaki@210.149.131.214"   # rp1.at-lifestyle.ig.local
+  alias ssh@web1.at-lifestyle="ssh iwasaki@210.149.131.173"  # web1.at-lifestyle.ig.local
+  alias tags_php='rm -f ~/.tags.php;find /home/mitra/git/mitra-car /usr/local/symfony/symfony-1.4 -name "*.php" -o -name "*.inc" | xargs --verbose ctags -a -f ~/.tags.php -R --langmap=PHP:.php.inc --php-kinds=cdfi --javascript-kinds=f'
+  ;;
+www8317ui)
+  # さくらのVPSの設定
+  alias less="/usr/share/vim/vim72/macros/less.sh"
+  # prod
+  alias redmine="cd /var/www/prod/redmine"
+  # dev
+  alias library="cd /var/www/dev/mockn/library3/current"
+  alias demo="cd /var/www/dev/mockn/demo"
+  alias depot="cd /var/www/dev/mockn/depot"
+  alias devredmine="cd /var/www/dev/mockn/redmine"
+  ;;
+www6112uf)
+  # さくらのVPS 2Gプラン(prod_docker)の設定
+  alias less="/usr/share/vim/vim72/macros/less.sh"
+  ;;
+localhost)
+  ;;
+dev01)
+  # sakura VPS dev01.cssty.com
+  alias notify="cd /home/iwasaki/projects/notify/releases/trunk"
+  #alias spectest="bundle exec rspec ./spec | tee log/rspec.log -a"
+  alias spectest="bundle exec rspec ./spec"
+  ;;
+esac

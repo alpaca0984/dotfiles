@@ -1,0 +1,25 @@
+"-----------------------
+" Key Mapping
+"-----------------------
+"移動系
+imap <silent> <C-h> <Left>
+imap <silent> <C-j> <Down>
+imap <silent> <C-k> <Up>
+imap <silent> <C-l> <Right>
+
+"補完系(C-"などでフリーズ現象が起きたため)
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
+"imap < <><LEFT>
+
+"コマンド系
+imap <silent> <C-i> <ESC>
+
+"ctags
+autocmd BufRead,BufNewFile *.php set tags+=~/.tags.php
+map <silent><PageDown> <C-]>
+map <silent><PageUp> <C-T>
+map <silent><Home> :tags<cr>
+map <silent><End> :ts<cr>
+

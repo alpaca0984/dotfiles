@@ -1,0 +1,16 @@
+{
+    "keymap": {
+        "C-j": "peco.SelectNext",
+        "C-k": "peco.SelectPrevious",
+        "C-f": "peco.SelectNextPage",
+        "C-b": "peco.SelectPreviousPage",
+        "C-v": "peco.ToggleSelectMode"
+    },
+    "Style": {
+        "Basic":          ["on_default", "default"],
+        "SavedSelection": ["bold", "on_cyan", "white"],
+        "Selected":       ["underline", "on_green", "black"],
+        "Query":          ["yellow", "bold"],
+        "Matched":        ["bold", "yellow", "on_magenta"]
+    }
+}

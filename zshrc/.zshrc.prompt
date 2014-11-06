@@ -1,0 +1,56 @@
+####################
+# プロンプトの設定
+####################
+
+# プロンプトに色を付ける
+autoload -Uz colors
+colors
+
+# ブランチ名を表示
+autoload -Uz add-zsh-hook # いろいろなフックを便利にかけることができる関数をロード
+autoload -Uz vcs_info     # vcs_info関数をロード
+
+autoload -Uz is-at-least  # zshのバージョンチェック関数をロード
+if is-at-least 4.3.10; then
+  # zshのバージョンが4.3.10以上の時に表示する
+  # この check-for-changes が今回の設定するところ
+  zstyle ':vcs_info:git:*' check-for-changes true
+  zstyle ':vcs_info:git:*' stagedstr "+"    # ステージングに追加された場合表示される
+  zstyle ':vcs_info:git:*' unstagedstr "-"  # 変更がある場合表示される
+  zstyle ':vcs_info:git:*' formats '[%b(%c%u)]'
+  zstyle ':vcs_info:git:*' actionformats '[%b|%a(%c%u)]'
+fi
+
+# 表示するメッセージを返す
+function _update_vcs_info_msg() {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+
+# 先の関数をprecmdフックにひっかける(魔法のコマンド)
+add-zsh-hook precmd _update_vcs_info_msg
+
+# PROMPT変数の中の変数参照をプロンプト表示時に展開するための設定
+set prompt_subst
+
+# ユーザによって表示方法を変える
+case ${UID} in
+0)
+  # rootの設定
+  PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[red]}%}%/#%{${reset_color}%}%b "
+  PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
+  SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
+  ;;
+*)
+  # root以外の設定
+  PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%}%1(v|%F{green}%1v%f|) "
+  #PROMPT="%{${fg[red]}%}%/%%%{${reset_color}%} "
+  PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
+  SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+      PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*}) ${PROMPT}"
+  ;;
+esac
+
+

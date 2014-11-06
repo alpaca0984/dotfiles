@@ -1,0 +1,27 @@
+--------------------------------------------------
+ zshがある場合はログイン時のシェルにzshを使用する
+  - 以下の設定を.bash_profileの頭に追記する
+--------------------------------------------------
+# change zsh
+if [[ -x $HOME/local/bin/zsh ]]; then
+  export SHELL=$HOME/local/bin/zsh
+  exec $SHELL
+elif [[ -x /usr/local/bin/zsh ]]; then
+  export SHELL=/usr/local/bin/zsh
+  exec $SHELL
+elif [[ -x /usr/bin/zsh ]]; then
+  export SHELL=/usr/bin/zsh
+  exec $SHELL
+elif [[ -x /bin/zsh ]]; then
+  export SHELL=/bin/zsh
+  exec $SHELL
+fi
+--------------------------------
+
+
+--------------------------------
+ 環境特有のgitconfigを設定する
+--------------------------------
+vim ~/.gitconfig
+ -> ユーザ名とメルアドを記載する
+--------------------------------

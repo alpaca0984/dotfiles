@@ -1,0 +1,126 @@
+"-----------------------
+" Plugin Config
+"-----------------------
+
+"--------------------------
+" neocomplcache
+"--------------------------
+let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+set nopaste  " neocomplcacheと競合するためOFFにする
+
+"--------------------------
+" neosnippet
+"--------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/dotfiles/snippets'
+
+"--------------------------
+" unite.vim
+"--------------------------
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+"" バッファ一覧
+nnoremap <silent> <C-u><C-b> :<C-u>Unite buffer<CR>
+"" ファイル一覧
+nnoremap <silent> <C-u><C-f> :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+"" レジスタ一覧
+nnoremap <silent> <C-u><C-r> :<C-u>Unite -buffer-name=register register<CR>
+"" 常用セット
+nnoremap <silent> <C-u><C-u> :<C-u>Unite buffer file_mru<CR>
+"" スニペット(動かない・・・)
+"nnoremap <silent> <C-u><C-s> :<C-u>Unite snippet<CR>
+
+"--------------------------
+" YankRing.vim
+"--------------------------
+nmap <silent> <SPACE><C-l> :<C-u>YRShow<CR>
+
+"--------------------------
+" Align.vim
+"--------------------------
+"" 日本語などの幅広文字に対応するための設定
+let g:Align_xstrlen=3
+
+"--------------------------
+" vim-indent-guides
+"--------------------------
+"" vim立ち上げたときに、自動的にオンにする
+let g:indent_guides_enable_on_vim_startup=1
+"" ガイドをスタートするインデントの量
+let g:indent_guides_start_level=2
+"" ガイドの幅
+let g:indent_guides_guide_size = 1
+"" 自動カラーを無効にする(下記 色設定が適用されないため)
+let g:indent_guides_auto_colors=0
+"" 奇数インデントのカラー(ctermbgの値を調整)
+"   - カラーコード表(http://cl.pocari.org/images/vim-256color.png)
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=235
+"" 偶数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=237
+
+"--------------------------
+" tagbar.vim
+"--------------------------
+"" キーバインド変更
+nmap <F8> :TagbarToggle<CR>
+
+"" ハイライトをデフォルトでON
+let g:gitgutter_highlight_lines=1
+"" キーバインド
+""" ハイライトの表示・非表示
+nnoremap <silent> ,gt :<C-u>GitGutterToggle<CR>
+""" ハイライトの再読み込み
+nnoremap <silent> ,gr :<C-u>GitGutterDisable<CR>:<C-u>GitGutterEnable<CR>
+""" 次の差分へ
+nnoremap <silent> ,gn :<C-u>GitGutterNextHunk<CR>
+""" 前の差分へ
+nnoremap <silent> ,gp :<C-u>GitGutterPrevHunk<CR>
+
+
+
+"--------------------------
+" memolist.vim
+"--------------------------
+nnoremap :mn  :MemoNew<CR>
+nnoremap :ml  :MemoList<CR>
+nnoremap :mg  :MemoGrep<CR>
+
+
+
+"--------------------------
+" nerdcommenter
+"--------------------------
+" デフォルトのキーマッピングをオフ
+let g:NERDCreateDefaultMappings = 0
+" コメントアウトした際のスペース数を1に設定
+let NERDSpaceDelims = 1
+" コメントアウト、解除
+nmap ,, <Plug>NERDCommenterToggle
+vmap ,, <Plug>NERDCommenterToggle
+" 複数行コメント
+nmap ,s <Plug>NERDCommenterSexy
+vmap ,s <Plug>NERDCommenterSexy
+
+
+

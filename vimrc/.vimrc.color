@@ -1,0 +1,21 @@
+"-------------
+" color設定
+"-------------
+
+syntax on                            " シンタックスカラーリング
+colorscheme molokai                  " カラー
+
+"--------------------------
+" color scheme(molokai)
+"--------------------------
+let g:molokai_original = 1
+let g:rehash256 = 1
+"set backgroud=dark "エラーが出るのでOFF
+
+
+"vimdiff color
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
+

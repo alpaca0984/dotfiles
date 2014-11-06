@@ -1,0 +1,34 @@
+"----------------------
+" 補完の設定
+"----------------------
+
+"----------------------
+" シンタックスチェック
+"----------------------
+"phpファイル保存と同時に文法チェック
+augroup phpsyntaxcheck
+autocmd!
+autocmd BufWrite *.php w !php -l
+augroup END
+
+
+"-------------------
+" vim tags
+"-------------------
+"set tags=~/.vim/tags
+
+
+"-----------------------
+" 入力補完
+"-----------------------
+"php
+autocmd FileType php  :set dictionary=~/.vim/dictionary/php.dict
+
+"閉じタグ補完
+"augroup MyTagCloseHelper
+"  autocmd!
+"  autocmd Filetype xml  inoremap <buffer> </ </<C-x><C-o>
+"  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+"  autocmd Filetype php  inoremap <buffer> </ </<C-x><C-o>
+"augroup END
+

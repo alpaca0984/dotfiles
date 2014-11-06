@@ -1,0 +1,7 @@
+# 環境に依存する .gitconfigの設定ファイル
+gitconfig/.gitconfig.local
+
+# ゴミファイル
+.DS_Store
+thumbs.db
+*.swp
