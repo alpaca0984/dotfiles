@@ -8,13 +8,13 @@ imap <silent> <C-k> <Up>
 imap <silent> <C-l> <Right>
 
 "補完系(C-"などでフリーズ現象が起きたため)
-"imap { {}<LEFT>
-"imap [ []<LEFT>
-"imap ( ()<LEFT>
-"imap < <><LEFT>
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+imap < <><LEFT>
 
 "コマンド系
-imap <silent> <C-i> <ESC>
+" imap <silent> <C-i> <ESC>
 
 "ctags
 autocmd BufRead,BufNewFile *.php set tags+=~/.tags.php
