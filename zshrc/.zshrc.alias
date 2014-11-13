@@ -37,6 +37,7 @@ alias vi="vim"
 
 alias topex="glances"
 
+alias dotfiles="cd ~/dotfiles"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias tmux="tmux -2"        # vimの色をtmux上で再現するために
@@ -64,3 +65,6 @@ hirano)
   alias cash="cd /home/hirano.masataka/git/cashing/"
   ;;
 esac
+
+# ctags の update
+alias tagupdate='ctags -R --languages=php -f ~/.tags.php `pwd`'

@@ -22,4 +22,57 @@ map <silent><PageDown> <C-]>
 map <silent><PageUp> <C-T>
 map <silent><Home> :tags<cr>
 map <silent><End> :ts<cr>
+"tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
 
+
+" --------- split ------------------------------------
+"set splitright " 新しいwindowを右に開く
+"set splitbelow " 新しいwindowを下に開く
+augroup MyWinEnterWidth
+  autocmd!
+  autocmd WinEnter * if winwidth(0) < 250 | vertical resize 250 | endif
+augroup END
+
+" ※ウィンドウ操作のキーマッピングは全てvim-submodeにて記載
+" ----------------------------------------------------
+
+
+" ---------- vim-submode -----------------------------
+let g:submode_keep_leaving_key = 1  " サブモードから抜けた時のキーを有効にする(改造版だけの機能)
+let g:submode_timeout = 1           " タイムアウトを有効に
+let g:submode_timeoutlen = 600      " 600msでタイムアウト
+
+" 【マッピング】ウィンドウ操作
+" 初回移動後カーソルが表示されてくれないのでenter_withは一旦<ESC>にしている
+call submode#enter_with('controllwindow', 'n', '', 's', '<ESC>')
+call submode#map('controllwindow', 'n', '', 'l', '<C-w>l')
+call submode#map('controllwindow', 'n', '', 'h', '<C-w>h')
+call submode#map('controllwindow', 'n', '', 'k', '<C-w>k')
+call submode#map('controllwindow', 'n', '', 'j', '<C-w>j')
+call submode#map('controllwindow', 'n', '', '<S-l>', '<C-w><S-l>')
+call submode#map('controllwindow', 'n', '', '<S-h>', '<C-w><S-h>')
+call submode#map('controllwindow', 'n', '', '<S-k>', '<C-w><S-k>')
+call submode#map('controllwindow', 'n', '', '<S-j>', '<C-w><S-j>')
+call submode#map('controllwindow', 'n', '', '0', '<C-w>t')
+call submode#map('controllwindow', 'n', '', '$', '<C-w>b')
+call submode#map('controllwindow', 'n', '', '=', '<C-w>=')          " 等幅化
+call submode#map('controllwindow', 'n', '', '<bar>', '<C-w><bar>')  " 幅最大化（<bar>とは'|'のこと）
+call submode#map('controllwindow', 'n', '', '_', '<C-w>_')          " 高さ最大化
+
+call submode#map('controllwindow', 'n', '', 'v', ':rightbelow vsplit<CR>')
+"call submode#map('controllwindow', 'n', '', 's', ':rightbelow split<CR>')
+" ↑ mapに指定するキーがenter(withに指定したキーと同一だと誤操作しやすいためボツ
+" ↓ よってここだけは通常のマッピングで対応
+nnoremap ss :rightbelow split<CR>
+
+"call submode#map('controllwindow', 'n', '', 'f', '<C-w>')  " (番号)sfでwindow番号を指定して移動
+" ↑ (番号)+(submoduleのマッピング)は思ったように動作しない
+" ↓ よってここだけは通常のマッピングで対応
+nnoremap sf <C-w><C-w>
+
+call submode#map('controllwindow', 'n', '', '<C-l>', '3<C-w><')
+call submode#map('controllwindow', 'n', '', '<C-h>', '3<C-w>>')
+call submode#map('controllwindow', 'n', '', '<C-k>', '3<C-w>+')
+call submode#map('controllwindow', 'n', '', '<C-j>', '3<C-w>-')
+" ----------------------------------------------------
