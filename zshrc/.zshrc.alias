@@ -63,6 +63,8 @@ hirano)
   alias car="cd /home/hirano.masataka/git/mitra-car/"
   alias common="cd /home/hirano.masataka/git/mitra-common/"
   alias cash="cd /home/hirano.masataka/git/cashing/"
+  alias stats="cd /home/hirano.masataka/git/stats/"
+  alias kuruvia="cd /home/hirano.masataka/git/kuruvia/"
   ;;
 localhost)
   alias myapp="cd /home/vagrant/git/myapp"
