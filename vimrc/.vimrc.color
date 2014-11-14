@@ -14,8 +14,8 @@ let g:rehash256 = 1
 
 
 "vimdiff color
-hi DiffAdd    ctermfg=black ctermbg=2
-hi DiffChange ctermfg=black ctermbg=3
-hi DiffDelete ctermfg=black ctermbg=6
-hi DiffText   ctermfg=black ctermbg=7
+hi DiffDelete ctermfg=gray ctermbg=black
+hi DiffChange ctermbg=black
+hi DiffAdd ctermbg=black
+hi DiffText ctermbg=darkred
 

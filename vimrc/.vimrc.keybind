@@ -31,7 +31,7 @@ nnoremap <C-]> g<C-]>
 "set splitbelow " 新しいwindowを下に開く
 augroup MyWinEnterWidth
   autocmd!
-  autocmd WinEnter * if winwidth(0) < 250 | vertical resize 250 | endif
+  autocmd WinEnter * if winwidth(0) < 100 | vertical resize 100 | endif
 augroup END
 
 " ※ウィンドウ操作のキーマッピングは全てvim-submodeにて記載
