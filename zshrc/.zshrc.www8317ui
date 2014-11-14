@@ -3,7 +3,7 @@
 ####################
 
 # RVMをPATHに追加
-PATH=$PATH:/usr/local/rvm/bin
+# PATH=$PATH:/usr/local/rvm/bin
 
 
 

@@ -64,6 +64,9 @@ hirano)
   alias common="cd /home/hirano.masataka/git/mitra-common/"
   alias cash="cd /home/hirano.masataka/git/cashing/"
   ;;
+localhost)
+  alias myapp="cd /home/vagrant/git/myapp"
+  ;;
 esac
 
 # ctags の update
