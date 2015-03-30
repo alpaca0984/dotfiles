@@ -61,6 +61,9 @@ call submode#map('controllwindow', 'n', '', '<bar>', '<C-w><bar>')  " 幅最大�
 call submode#map('controllwindow', 'n', '', '_', '<C-w>_')          " 高さ最大化
 
 call submode#map('controllwindow', 'n', '', 'v', ':rightbelow vsplit<CR>')
+
+call submode#map('controllwindow', 'n', '', '-', '<C-w>-')
+call submode#map('controllwindow', 'n', '', '+', '<C-w>+')
 "call submode#map('controllwindow', 'n', '', 's', ':rightbelow split<CR>')
 " ↑ mapに指定するキーがenter(withに指定したキーと同一だと誤操作しやすいためボツ
 " ↓ よってここだけは通常のマッピングで対応

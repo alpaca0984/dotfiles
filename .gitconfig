@@ -15,7 +15,7 @@
   sho = show --pretty="format:" --name-only # 編集したファイル一覧
   cf = show --pretty="format:" --name-only # 編集したファイル一覧
   so = remote show origin
-  ft = fetch
+  ft = fetch --prune
   up = pull --rebase       # pull rebase
   rbm = rebase master      # masterへのrebaseはよく使うのでalias
   ad = add
@@ -61,6 +61,7 @@
   d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
   d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
   dd = difftool -d           # difftool --dir-diff
+  ds = git diff -C --stat --pretty=oneline
   # mergeの際にconflictが起きたファイルを編集
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   # mergeの際にconflictが起きたファイルをadd

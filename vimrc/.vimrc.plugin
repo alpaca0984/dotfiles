@@ -101,6 +101,12 @@ NeoBundle 'git://github.com/AndrewRadev/switch.vim.git'
 "NeoBundle 'git://github.com/kana/vim-submode'  " 本家
 NeoBundle 'git://github.com/thinca/vim-submode' " 改造版
 
+" GitGutter
+NeoBundle 'airblade/vim-gitgutter'    "gitのdiff部分がファイルで可視化される
+map <silent><F12> :GitGutterLineHighlightsToggle<cr>
+map <silent><F10> <Plug>GitGutterNextHunk
+map <silent><F11> <Plug>GitGutterPrevHunk
+
 "----------
 
 filetype plugin indent on
