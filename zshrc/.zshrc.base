@@ -80,3 +80,52 @@ autoload -U compinit; compinit
 # 自作の実行スクリプトの格納先
 export PATH=$PATH:$HOME/bin
 
+
+######################
+# 略語展開
+######################
+# zshの個人的に便利だと思った機能（suffix alias、略語展開）
+## http://qiita.com/matsu_chara/items/8372616f52934c657214
+# [zsh]vimのiabのよう略語展開
+## http://d.hatena.ne.jp/rubikitch/20071104/1194183191
+
+setopt extended_glob
+
+typeset -A abbreviations
+abbreviations=(
+  "Im"    "| more"
+  "Ia"    "| awk"
+  "Ig"    "| grep"
+  "Ieg"   "| egrep"
+  "Iag"   "| agrep"
+  "Igr"   "| groff -s -p -t -e -Tlatin1 -mandoc"
+  "Ip"    "| $PAGER"
+  "Ih"    "| head"
+  "Ik"    "| keep"
+  "It"    "| tail"
+  "Is"    "| sort"
+  "Iv"    "| ${VISUAL:-${EDITOR}}"
+  "Iw"    "| wc"
+  "Ix"    "| xargs"
+)
+
+# ユーザー作成コマンド
+abbreviations+=(
+  "Ic"    "| colorize_log"
+)
+
+magic-abbrev-expand() {
+    local MATCH
+    LBUFFER=${LBUFFER%%(#m)[-_a-zA-Z0-9]#}
+    LBUFFER+=${abbreviations[$MATCH]:-$MATCH}
+    zle self-insert
+}
+
+no-magic-abbrev-expand() {
+  LBUFFER+=' '
+}
+
+zle -N magic-abbrev-expand
+zle -N no-magic-abbrev-expand
+bindkey " " magic-abbrev-expand
+bindkey "^x " no-magic-abbrev-expand
