@@ -105,7 +105,12 @@ NeoBundle 'git://github.com/thinca/vim-submode' " 改造版
 NeoBundle 'airblade/vim-gitgutter'    "gitのdiff部分がファイルで可視化される
 map <silent><F12> :GitGutterLineHighlightsToggle<cr>
 map <silent><F10> <Plug>GitGutterNextHunk
-map <silent><F11> <Plug>GitGutterPrevHunk
+" map <silent><F11> <Plug>GitGutterPrevHunk
+
+" powerline
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 "----------
 
@@ -120,3 +125,8 @@ if neobundle#exists_not_installed_bundles()
 endif
 "------end NeoBundle----------
 
+" winresizer.vim
+" http://www.vim.org/scripts/script.php?script_id=4591
+NeoBundle 'git://github.com/jimsei/winresizer.git'
+
+NeoBundle 'christoomey/vim-tmux-navigator'
