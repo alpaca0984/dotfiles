@@ -86,7 +86,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=237
 nmap <F8> :TagbarToggle<CR>
 
 "" ハイライトをデフォルトでON
-let g:gitgutter_highlight_lines=1
+" let g:gitgutter_highlight_lines=1
+
 "" キーバインド
 """ ハイライトの表示・非表示
 nnoremap <silent> ,gt :<C-u>GitGutterToggle<CR>
@@ -129,3 +130,9 @@ vmap ,s <Plug>NERDCommenterSexy
 "--------------------------
 " let g:auto_ctags = 1
 " let g:auto_ctags_tags_args = '-R --languages=php -f ~/.tags.php `pwd`'
+let curDir = getcwd()
+if (stridx(curDir, '/cashing') > 0)
+  set tags=~/tags/.cashing.tags
+elseif (stridx(curDir, '/mitra-car') > 0)
+  set tags=~/tags/.car.tags
+endif

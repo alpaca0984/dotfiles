@@ -65,6 +65,7 @@ hirano)
   alias cash="cd /home/hirano.masataka/git/cashing/"
   alias stats="cd /home/hirano.masataka/git/stats/"
   alias kuruvia="cd /home/hirano.masataka/git/kuruvia/"
+  alias sys="cd /home/hirano.masataka/git/sysmonitor/"
   ;;
 localhost)
   alias myapp="cd /home/vagrant/git/myapp"
@@ -72,7 +73,17 @@ localhost)
 esac
 
 # ctags の update
-alias tagupdate='ctags -R --languages=php -f ~/.tags.php `pwd`'
+function tagupdate() {
+  case `pwd` in
+    */cashing*)
+      ctags -f ~/tags/.cashing.tags `pwd`
+      ;;
+    */mitra-car*)
+      ctags -f ~/tags/.car.tags `pwd`
+      ;;
+  esac
+}
+
 
 # other
 alias vimr='vim -R'
