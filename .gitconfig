@@ -15,7 +15,6 @@
   sho = show --pretty="format:" --name-only # 編集したファイル一覧
   cf = show --pretty="format:" --name-only # 編集したファイル一覧
   so = remote show origin
-  ft = fetch --prune
   up = pull --rebase       # pull rebase
   rbm = rebase master      # masterへのrebaseはよく使うのでalias
   ad = add
@@ -77,6 +76,7 @@
   smupdate = submodule foreach "git checkout master; git pull origin master"
   show-graph = log --graph --abbrev-commit --pretty=oneline
   dt = difftool -d
+  dn = diff --name-only
 [diff]
   tool = vim-diff
 [difftool]
@@ -85,3 +85,5 @@
   cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
 [core]
   editor = vim
+[fetch]
+	prune = true
