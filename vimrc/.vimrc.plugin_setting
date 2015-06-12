@@ -136,3 +136,19 @@ if (stridx(curDir, '/cashing') > 0)
 elseif (stridx(curDir, '/mitra-car') > 0)
   set tags=~/tags/.car.tags
 endif
+
+let g:alpaca_tags#config = {
+                       \    '_' : '-R --sort=yes',
+                       \    'ruby': '--languages=+Ruby',
+                       \ }
+
+" http://kaihar4.com/2014/08/12/vim-ctags.html
+augroup AlpacaTags
+  autocmd!
+  if exists(':AlpacaTags')
+    autocmd BufWritePost Gemfile AlpacaTagsBundle
+    autocmd BufEnter * AlpacaTagsSet
+    " 毎回保存と同時更新する場合はコメントを外す
+    " autocmd BufWritePost * TagsUpdate
+  endif
+augroup END
