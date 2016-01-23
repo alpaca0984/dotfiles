@@ -93,7 +93,6 @@ map <silent><F12> :GitGutterLineHighlightsToggle<cr>
 map <silent><F10> <Plug>GitGutterNextHunk
 " map <silent><F11> <Plug>GitGutterPrevHunk
 
-" powerline vim を python 対応にできなかった
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
