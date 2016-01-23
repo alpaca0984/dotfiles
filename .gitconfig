@@ -85,5 +85,6 @@
   cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
 [core]
   editor = vim
+  excludesfile = ~/.gitignore_global
 [fetch]
-	prune = true
+  prune = true
