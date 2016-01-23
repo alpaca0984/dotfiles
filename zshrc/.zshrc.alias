@@ -84,17 +84,12 @@ function tagupdate() {
   esac
 }
 
-
 # other
 alias vimr='vim -R'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias sfgrep='find /usr/local/symfony/symfony-1.4/ | xargs egrep --color=auto'
-
-alias miyatake01="ssh hirano.masataka@miyatake01.d.life.dev"
 alias sym="cd /home/hirano.masataka/git/mitra-car/lib/vendor/symfony-1.4"
-
-alias be="bundle exec"
 
 ######################
 # 略語展開

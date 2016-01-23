@@ -10,15 +10,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 call neobundle#end()
 
-"--Sample--
-" original repos on github
-"Bundle 'user_name/repository_name'
-" vim-scripts repos
-"Bundle 'script_name'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-"---------
-
 "--Plugin--
 "" color scheme - molokai
 NeoBundle 'git://github.com/tomasr/molokai.git'
@@ -102,10 +93,10 @@ map <silent><F12> :GitGutterLineHighlightsToggle<cr>
 map <silent><F10> <Plug>GitGutterNextHunk
 " map <silent><F11> <Plug>GitGutterPrevHunk
 
-" powerline
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Lokaltog/powerline-fontpatcher'
+" powerline vim を python 対応にできなかった
+" NeoBundle 'alpaca-tc/alpaca_powertabline'
+" NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+" NeoBundle 'Lokaltog/powerline-fontpatcher'
 
 " ------------------
 "  Ruby/Rails 用設定

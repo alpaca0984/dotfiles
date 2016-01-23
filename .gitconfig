@@ -8,9 +8,7 @@
   interactive = auto
   grep = auto
 [alias]
-#  st = status -sb
   st = status -s
-#  st = status
   sh = show
   sho = show --pretty="format:" --name-only # 編集したファイル一覧
   cf = show --pretty="format:" --name-only # 編集したファイル一覧

@@ -52,5 +52,3 @@ case ${UID} in
       PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*}) ${PROMPT}"
   ;;
 esac
-
-
