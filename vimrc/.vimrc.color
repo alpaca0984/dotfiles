@@ -10,12 +10,9 @@ colorscheme molokai                  " カラー
 "--------------------------
 let g:molokai_original = 1
 let g:rehash256 = 1
-"set backgroud=dark "エラーが出るのでOFF
-
 
 "vimdiff color
 hi DiffDelete ctermfg=gray ctermbg=black
 hi DiffChange ctermbg=black
 hi DiffAdd ctermbg=black
 hi DiffText ctermbg=darkred
-

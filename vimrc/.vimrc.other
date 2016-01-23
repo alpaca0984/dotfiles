@@ -1,29 +1,3 @@
 "----------------------
 " その他の設定
 "----------------------
-
-" Setting the font to Consolas, 11 pt
-" if has("gui_running")
-  " if has("gui_gtk2")
-    " set guifont=Consolas\ 11
-  " else
-    " set guifont=Consolas:h11
-  " endif
-" endif
-
-" if has('gui_win32')
-  " " On Vim 7.4.16 the following line still doesn't work with gui_gtk
-  " set guifont=Consolas:h11:cANSI,Inconsolata:h12,Courier New:h11
-" else " not win32
-  " let consolas=system('fc-list | grep -c Consolas')
-  " let inconsolata=system('fc-list | grep -c Inconsolata')
-  " if (consolas > 0)
-    " set guifont=Consolas\ 11
-  " elseif (inconsolata > 0)
-    " set guifont=Inconsolata\ 12
-  " else
-    " set guifont=DejaVu\ Sans\ Mono\ 10
-    " " or simply
-    " " set guifont=Monospace\ 10
-  " endif
-" endif
