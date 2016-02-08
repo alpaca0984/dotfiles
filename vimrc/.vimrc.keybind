@@ -55,6 +55,7 @@ call submode#map('controllwindow', 'n', '', '$', '<C-w>b')
 call submode#map('controllwindow', 'n', '', '=', '<C-w>=')          " 等幅化
 call submode#map('controllwindow', 'n', '', '<bar>', '<C-w><bar>')  " 幅最大化（<bar>とは'|'のこと）
 call submode#map('controllwindow', 'n', '', '_', '<C-w>_')          " 高さ最大化
+call submode#map('controllwindow', 'n', '', 'm', '<C-w>_<C-w><bar>')
 
 call submode#map('controllwindow', 'n', '', 'v', ':rightbelow vsplit<CR>')
 
@@ -67,6 +68,7 @@ call submode#map('controllwindow', 'n', '', '-', '<C-w>-')
 " ↓ よってここだけは通常のマッピングで対応
 nnoremap ss :rightbelow split<CR>
 nnoremap sv :rightbelow vsplit<CR>
+nnoremap st :tab sp<CR>
 
 "call submode#map('controllwindow', 'n', '', 'f', '<C-w>')  " (番号)sfでwindow番号を指定して移動
 " ↑ (番号)+(submoduleのマッピング)は思ったように動作しない
