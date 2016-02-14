@@ -2,10 +2,12 @@
 " Key Mapping
 "-----------------------
 "移動系
-imap <silent> <C-h> <Left>
-imap <silent> <C-j> <Down>
-imap <silent> <C-k> <Up>
-imap <silent> <C-l> <Right>
+imap <silent> <C-b> <Left>
+imap <silent> <C-n> <Down>
+imap <silent> <C-p> <Up>
+imap <silent> <C-f> <Right>
+" imap <silent> <C-h> <BS>
+imap <silent> <C-d> <Del>
 
 "補完系(C-"などでフリーズ現象が起きたため)
 imap { {}<LEFT>
