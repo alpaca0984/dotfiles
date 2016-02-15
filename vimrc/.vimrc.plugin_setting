@@ -112,15 +112,6 @@ vmap ,s <Plug>NERDCommenterSexy
 "--------------------------
 " auto-ctags
 "--------------------------
-" let g:auto_ctags = 1
-" let g:auto_ctags_tags_args = '-R --languages=php -f ~/.tags.php `pwd`'
-let curDir = getcwd()
-if (stridx(curDir, '/cashing') > 0)
-  set tags=~/tags/.cashing.tags
-elseif (stridx(curDir, '/mitra-car') > 0)
-  set tags=~/tags/.car.tags
-endif
-
 let g:alpaca_tags#config = {
                        \    '_' : '-R --sort=yes',
                        \    'ruby': '--languages=+Ruby',

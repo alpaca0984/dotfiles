@@ -56,34 +56,6 @@ alias fetch="fetch --prune"
 #######
 alias be="bundle exec"
 
-# 環境によって異なるaliasの設定
-case `hostname -s` in
-hirano)
-  # hikaku.devの設定
-  alias car="cd /home/hirano.masataka/git/mitra-car/"
-  alias common="cd /home/hirano.masataka/git/mitra-common/"
-  alias cash="cd /home/hirano.masataka/git/cashing/"
-  alias stats="cd /home/hirano.masataka/git/stats/"
-  alias kuruvia="cd /home/hirano.masataka/git/kuruvia/"
-  alias sys="cd /home/hirano.masataka/git/sysmonitor/"
-  ;;
-localhost)
-  alias myapp="cd /home/vagrant/git/myapp"
-  ;;
-esac
-
-# ctags の update
-function tagupdate() {
-  case `pwd` in
-    */cashing*)
-      ctags -f ~/tags/.cashing.tags `pwd`
-      ;;
-    */mitra-car*)
-      ctags -f ~/tags/.car.tags `pwd`
-      ;;
-  esac
-}
-
 # other
 alias vimr='vim -R'
 alias grep='grep --color'
