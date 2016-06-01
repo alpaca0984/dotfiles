@@ -22,6 +22,8 @@ map <silent><Home> :tags<cr>
 map <silent><End> :ts<cr>
 "tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+"NERDTree
+nnoremap <silent><C-y> :NERDTreeToggle<CR>
 
 
 " --------- split ------------------------------------

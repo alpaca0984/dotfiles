@@ -101,6 +101,9 @@ NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
+"insert here your Neobundle plugins"
+NeoBundle 'scrooloose/nerdtree'
+
 " ------------------
 "  Ruby/Rails 用設定
 " ------------------
