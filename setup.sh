@@ -57,7 +57,7 @@ if [ ! -d $PLUGIN_DIR ]; then
   mkdir -p $PLUGIN_DIR
   echo "$PLUGIN_DIRディレクトリを作成しました。"
 fi
-NEOBUNDLE_DIR=$HOME/.vim/neobundle.vim
+NEOBUNDLE_DIR=$HOME/.vim/bundle/neobundle.vim
 if [ ! -d $NEOBUNDLE_DIR ]; then
   git clone git://github.com/Shougo/neobundle.vim $NEOBUNDLE_DIR
   echo "$NEOBUNDLE_DIRディレクトリを作成しました。"
