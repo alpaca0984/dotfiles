@@ -133,6 +133,10 @@ NeoBundle 'simeji/winresizer'
 
 NeoBundle 'christoomey/vim-tmux-navigator'
 
+" Add additional support for Ansible in VIM
+" https://github.com/chase/vim-ansible-yaml
+NeoBundle 'chase/vim-ansible-yaml'
+
 " Required:
 call neobundle#end()
 
