@@ -78,6 +78,10 @@ if [ ! -f $SYM_MOLOKAI_FILE ]; then
 fi
 echo;
 
+# NeoBundleInstall
+$NEOBUNDLE_DIR/bin/neoinstall
+echo "NeoBundleInstallを実行しました"
+
 ###########################################
 #### gitconfig                         ####
 ####  - ファイルが存在したら削除しない ####
