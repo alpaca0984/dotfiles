@@ -1,6 +1,5 @@
-[user]
-  name = Masataka Hirano
-  email = hirano.masataka@a-tm.co.jp
+[include]
+  path = ~/dotfiles/gitconfig/.gitconfig.local
 [color]
   diff = auto
   status = auto
