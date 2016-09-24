@@ -60,8 +60,6 @@ alias be="bundle exec"
 alias vimr='vim -R'
 alias grep='grep --color'
 alias egrep='egrep --color'
-alias sfgrep='find /usr/local/symfony/symfony-1.4/ | xargs egrep --color=auto'
-alias sym="cd /home/hirano.masataka/git/mitra-car/lib/vendor/symfony-1.4"
 
 ######################
 # 略語展開
