@@ -21,5 +21,5 @@ export PATH="$PATH:$HOME/dotfiles/bin"
 [ -f ${HOME}/dotfiles/zshrc/.zshrc.peco ] && source ${HOME}/dotfiles/zshrc/.zshrc.peco
 
 # マシンごとの設定
-[ -f ${HOME}/dotfiles/zshrc/.zshrc.`hostname -s` ] && source ${HOME}/dotfiles/zshrc/.zshrc.`hostname -s`
+[ -f ${HOME}/dotfiles/zshrc/.zshrc.local ] && source ${HOME}/dotfiles/zshrc/.zshrc.local
 

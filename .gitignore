@@ -1,5 +1,6 @@
-# 環境に依存する .gitconfigの設定ファイル
+# 環境に依存する .gitconfig .zshrcの設定ファイル
 gitconfig/.gitconfig.local
+zshrc/.zshrc.local
 
 # ゴミファイル
 .DS_Store
