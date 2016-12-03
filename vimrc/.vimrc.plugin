@@ -31,8 +31,8 @@ NeoBundle 'Shougo/vimproc', {
 " unite.vim - ファイラなど
 NeoBundle 'Shougo/unite.vim'
 
-" neocomplcache - 補完機能
-NeoBundle 'Shougo/neocomplcache'
+" neocomplete - 補完機能
+NeoBundle 'Shougo/neocomplete'
 
 " neosnippet.vim - スニペット
 NeoBundle 'Shougo/neosnippet.vim'

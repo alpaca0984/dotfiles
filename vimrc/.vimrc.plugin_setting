@@ -3,10 +3,12 @@
 "-----------------------
 
 "--------------------------
-" neocomplcache
+" neocomplete
 "--------------------------
-let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
-set nopaste  " neocomplcacheと競合するためOFFにする
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
 
 "--------------------------
 " neosnippet
