@@ -33,7 +33,7 @@ echo;
 #########################################################
 ##### standard dotfiles(必ずシンボリックを張り直す) #####
 #########################################################
-ary=(".zshrc" ".gitconfig" ".tmux.conf" ".vimrc" ".gemrc" ".innotop" ".config")
+ary=(".zshrc" ".gitconfig" ".tmux.conf" ".vimrc" ".gemrc")
 for file in "${ary[@]}"
 do
   echo "-- $file --"
