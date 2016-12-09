@@ -38,11 +38,6 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/dotfiles/snippets'
 
 "--------------------------
-" YankRing.vim
-"--------------------------
-nmap <silent> <SPACE><C-l> :<C-u>YRShow<CR>
-
-"--------------------------
 " Align.vim
 "--------------------------
 "" 日本語などの幅広文字に対応するための設定
