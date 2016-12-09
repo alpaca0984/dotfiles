@@ -47,9 +47,6 @@ NeoBundle 'thinca/vim-quickrun'
 "surround.vim - 囲い文字などの入力
 NeoBundle 'vim-scripts/surround.vim'
 
-"YankRing.vim - コピー履歴を辿る
-NeoBundle 'vim-scripts/YankRing.vim'
-
 "xml.vim - HTMLタグでも対応するタグにジャンプできる
 NeoBundle 'sukima/xmledit'
 
