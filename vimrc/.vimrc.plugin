@@ -38,6 +38,8 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 
+NeoBundle 'mattn/emmet-vim'
+
 " vim-snippets - デフォルトスニペット郡
 NeoBundle 'honza/vim-snippets'
 
