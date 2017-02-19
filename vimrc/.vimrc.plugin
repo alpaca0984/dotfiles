@@ -114,9 +114,6 @@ NeoBundle 'thinca/vim-submode'
 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 "   https://github.com/airblade/vim-gitgutter
 NeoBundle 'airblade/vim-gitgutter'
-map <silent><F12> :GitGutterLineHighlightsToggle<cr>
-map <silent><F10> <Plug>GitGutterNextHunk
-map <silent><F11> <Plug>GitGutterPrevHunk
 
 " alpaca_powertabline
 "   https://github.com/alpaca-tc/alpaca_powertabline
@@ -134,13 +131,9 @@ NeoBundle 'Lokaltog/powerline-fontpatcher'
 "   https://github.com/scrooloose/nerdtree
 NeoBundle 'scrooloose/nerdtree'
 
-" -----------------
-"  for Ruby/Rails
-" -----------------
-
 " Syntax checking hacks for vim
 "   https://github.com/vim-syntastic/syntastic
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'vim-syntastic/syntastic'
 
 " Integrated reference viewer.
 "   https://github.com/thinca/vim-ref
