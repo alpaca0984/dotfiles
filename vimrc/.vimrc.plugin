@@ -171,9 +171,13 @@ NeoBundle 'simeji/winresizer'
 "   https://github.com/chase/vim-ansible-yaml
 NeoBundle 'chase/vim-ansible-yaml'
 
-" Custom Haskell Vimscripts
-"   https://github.com/neovimhaskell/haskell-vim
-NeoBundle 'neovimhaskell/haskell-vim'
+" One-line Haskell Vim install
+"   https://github.com/begriffs/haskell-vim-now
+NeoBundle 'begriffs/haskell-vim-now'
+
+" A Vim alignment plugin
+"   https://github.com/junegunn/vim-easy-align
+NeoBundle 'junegunn/vim-easy-align'
 
 " Required:
 call neobundle#end()
