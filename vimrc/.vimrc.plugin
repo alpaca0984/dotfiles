@@ -15,10 +15,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" color scheme - molokai
+" Molokai color scheme for Vim
+"   https://github.com/tomasr/molokai
 NeoBundle 'tomasr/molokai'
 
-" vimproc.vim - なんだこれ
+" Interactive command execution in Vim
+"   https://github.com/Shougo/vimproc.vim
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'windows' : 'make -f make_mingw32.mak',
@@ -28,53 +30,72 @@ NeoBundle 'Shougo/vimproc', {
 \    },
 \ }
 
-" unite.vim - ファイラなど
+" Unite and create user interfaces
+"   https://github.com/Shougo/unite.vim
 NeoBundle 'Shougo/unite.vim'
 
-" neocomplete - 補完機能
+" Next generation completion framework after neocomplcache
+"   https://github.com/Shougo/neocomplete.vim
 NeoBundle 'Shougo/neocomplete'
 
-" neosnippet.vim - スニペット
+" neo-snippet plugin contains neocomplcache snippets source
+"   https://github.com/Shougo/neosnippet.vim
 NeoBundle 'Shougo/neosnippet.vim'
+
+" The standard snippets repository for neosnippet
+"   https://github.com/Shougo/neosnippet-snippets
 NeoBundle 'Shougo/neosnippet-snippets'
 
+" emmet for vim
+"   https://github.com/mattn/emmet-vim
 NeoBundle 'mattn/emmet-vim'
 
-" vim-snippets - デフォルトスニペット郡
+" vim-snipmate default snippets
+"   https://github.com/honza/vim-snippets
 NeoBundle 'honza/vim-snippets'
 
-" quickrun - ソースの実行
+" Run commands quickly.
+"   https://github.com/thinca/vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
 
-"surround.vim - 囲い文字などの入力
+" Delete/change/add parentheses/quotes/XML-tags/much more with ease
+"   https://github.com/vim-scripts/surround.vim
 NeoBundle 'vim-scripts/surround.vim'
 
-"xml.vim - HTMLタグでも対応するタグにジャンプできる
+" A filetype plugin for VIM to help edit XML files
+"   https://github.com/sukima/xmledit
 NeoBundle 'sukima/xmledit'
 
-"Align.vim - 整形処理(いろいろできる)
+" Help folks to align text, eqns, declarations, tables, etc
+"   https://github.com/vim-scripts/Align
 NeoBundle 'vim-scripts/Align'
 
-"tabular.vim - 整形処理(手軽？)
+" Vim script for text filtering and alignment
+"   https://github.com/godlygeek/tabular
 NeoBundle 'godlygeek/tabular'
 
-"vim-indent-guides - インデントをハイライト表示
+" A Vim plugin for visually displaying indent levels in code
+"   https://github.com/nathanaelkane/vim-indent-guides
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
-"memolist.vim - メモリスト
+" simple memo plugin for Vim.
+"   https://github.com/glidenote/memolist.vim
 NeoBundle 'glidenote/memolist.vim'
 
-"vdebug - vim + xdebug
+" Multi-language DBGP debugger client for Vim (PHP, Python, Perl, Ruby, etc.)
+"   https://github.com/joonty/vdebug
 NeoBundle 'joonty/vdebug'
 
-"nerdcommenter - コメントアウト
+" Vim plugin for intensely orgasmic commenting
+"   https://github.com/scrooloose/nerdcommenter
 NeoBundle 'scrooloose/nerdcommenter'
 
-"switch.vim - 関係する単語を切り替える(true <=> falseなど)
+" A simple Vim plugin to switch segments of text with predefined replacements
+"   https://github.com/AndrewRadev/switch.vim
 NeoBundle 'AndrewRadev/switch.vim'
 
-
 " alpaca_tags
+"   https://github.com/alpaca-tc/alpaca_tags
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
               \    'depends': ['Shougo/vimproc'],
               \    'autoload' : {
@@ -86,55 +107,80 @@ NeoBundleLazy 'alpaca-tc/alpaca_tags', {
               \    }
               \ }
 
-"submode
-"NeoBundle 'git://github.com/kana/vim-submode'  " 本家
-NeoBundle 'thinca/vim-submode' " 改造版
+" Create your own submodes
+"   https://github.com/thinca/vim-submode
+NeoBundle 'thinca/vim-submode'
 
-" GitGutter
-NeoBundle 'airblade/vim-gitgutter'    "gitのdiff部分がファイルで可視化される
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+"   https://github.com/airblade/vim-gitgutter
+NeoBundle 'airblade/vim-gitgutter'
 map <silent><F12> :GitGutterLineHighlightsToggle<cr>
 map <silent><F10> <Plug>GitGutterNextHunk
 map <silent><F11> <Plug>GitGutterPrevHunk
 
+" alpaca_powertabline
+"   https://github.com/alpaca-tc/alpaca_powertabline
 NeoBundle 'alpaca-tc/alpaca_powertabline'
+
+" statusline plugin for vim
+"   https://github.com/powerline/powerline
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+
+" Script to patch arrow and symbol glyphs into fonts for usage with Powerline and other compatible plugins.
+"   https://github.com/powerline/fontpatcher
 NeoBundle 'Lokaltog/powerline-fontpatcher'
 
-"insert here your Neobundle plugins"
+" A tree explorer plugin for vim.
+"   https://github.com/scrooloose/nerdtree
 NeoBundle 'scrooloose/nerdtree'
 
-" ------------------
-"  Ruby/Rails 用設定
-" ------------------
+" -----------------
+"  for Ruby/Rails
+" -----------------
 
-" 静的解析
+" Syntax checking hacks for vim
+"   https://github.com/vim-syntastic/syntastic
 NeoBundle 'scrooloose/syntastic'
 
-" ドキュメント参照
+" Integrated reference viewer.
+"   https://github.com/thinca/vim-ref
 NeoBundle 'thinca/vim-ref'
+
+" A vim-ref and Unite.vim source for ri.
+"   https://github.com/yuku-t/vim-ref-ri
 NeoBundle 'yuku-t/vim-ref-ri'
 
-" 自動で閉じる
+" endwise.vim: wisely add \"end\" in ruby, endfunction/endif/more in vim script, etc
+"   https://github.com/tpope/vim-endwise
 NeoBundle 'tpope/vim-endwise'
 
-"vim-rails - vimでRailsファイルを移動できる
+" rails.vim: Ruby on Rails power tools
+"   https://github.com/tpope/vim-rails
 NeoBundle 'tpope/vim-rails'
+
+" Lightweight support for Ruby's Bundler
+"   https://github.com/tpope/vim-bundler
 NeoBundle 'tpope/vim-bundler'
 
-"unite-rails - UniteでRailsを便利にする
+" a unite.vim plugin for rails
+"   https://github.com/basyura/unite-rails
 NeoBundle 'basyura/unite-rails'
 
+" HTML5 omnicomplete and syntax
+"   https://github.com/othree/html5.vim
 NeoBundle 'othree/html5.vim'
 
 " winresizer.vim
-" http://www.vim.org/scripts/script.php?script_id=4591
+"   http://www.vim.org/scripts/script.php?script_id=4591
 NeoBundle 'simeji/winresizer'
 
-NeoBundle 'christoomey/vim-tmux-navigator'
-
 " Add additional support for Ansible in VIM
-" https://github.com/chase/vim-ansible-yaml
+"   https://github.com/chase/vim-ansible-yaml
 NeoBundle 'chase/vim-ansible-yaml'
+
+" Custom Haskell Vimscripts
+"   https://github.com/neovimhaskell/haskell-vim
+NeoBundle 'neovimhaskell/haskell-vim'
 
 " Required:
 call neobundle#end()
