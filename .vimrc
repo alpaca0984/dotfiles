@@ -23,6 +23,7 @@ source ~/dotfiles/vimrc/.vimrc.statusline
 " 補完の設定
 source ~/dotfiles/vimrc/.vimrc.completion
 
-" その他の設定
-source ~/dotfiles/vimrc/.vimrc.other
-
+" 環境ごとの設定
+if filereadable("~/dotfiles/vimrc/.vimrc.local")
+  source ~/dotfiles/vimrc/.vimrc.local
+endif
