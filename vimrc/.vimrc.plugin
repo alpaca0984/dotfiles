@@ -165,7 +165,7 @@ NeoBundle 'othree/html5.vim'
 
 " winresizer.vim
 "   http://www.vim.org/scripts/script.php?script_id=4591
-NeoBundle 'simeji/winresizer'
+" NeoBundle 'simeji/winresizer'
 
 " Add additional support for Ansible in VIM
 "   https://github.com/chase/vim-ansible-yaml
