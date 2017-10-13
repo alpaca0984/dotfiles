@@ -60,6 +60,7 @@ alias be="bundle exec"
 alias vimr='vim -R'
 alias grep='grep --color'
 alias egrep='egrep --color'
+alias ag='ag --pager="less -R"'
 
 ######################
 # 略語展開
