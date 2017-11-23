@@ -49,7 +49,12 @@ done
 
 # ----- fish shell -----
 
-ln -s $DOTFILES/fish/config.fish $HOME/.config/fish/config.fish
+mkdir -p $HOME/.config/fish
+ary=("config.fish" "fishfile")
+for file in "${ary[@]}"
+do
+  ln -s $DOTFILES/fish/$file $HOME/.config/fish/$file
+done
 
 
 # ----- Vim config -----
