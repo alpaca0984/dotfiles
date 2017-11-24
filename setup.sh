@@ -4,35 +4,34 @@ DOTFILES="$HOME/dotfiles"
 
 cd $HOME
 
-#####################################################################
-#### デフォルトで存在するファイルをbackup_homeディレクトリに格納 ####
-#####################################################################
+# ----- Create backup directory. -----
+
 echo "-- backup --"
 DATE=`date +%Y%m%d_%H%M%S`
 BACKUP_DIR=$HOME/backup_home/$DATE/
 mkdir -p $BACKUP_DIR
-echo "$BACKUP_DIRディレクトリを作成しました。"
+echo "Created a directory: $BACKUP_DIR"
 echo;
 
-## HOMEの全ファイルをループ
-#for file in * .??*
-#do
+# ----- Create backup if you want. -----
+
+# for file in * .??*
+# do
 #  case $file in
-#  # 指定ファイルはバックアップ除外
+#  # These files will be excluded for being taken copies.
 #  "."|".."|"dotfiles"|"backup_home")
-#    echo "$fileはコピー対象ではありません。"
+#    echo "This file isn't supposed to be taken a copy: $file"
 #    continue
 #    ;;
 #  esac
-#  # バックアップ
+#  # Do backup.
 #  cp -pr $HOME/$file $BACKUP_DIR
-#  echo "$fileをコピーしました。"
-#done
-#echo;
+#  echo "Copied a file: $file"
+# done
+# echo;
 
-#########################################################
-##### standard dotfiles(必ずシンボリックを張り直す) #####
-#########################################################
+# ----- standard dotfiles -----
+
 ary=(".zshrc" ".gitconfig" ".tmux.conf" ".vimrc" ".gemrc")
 for file in "${ary[@]}"
 do
@@ -40,60 +39,70 @@ do
   if [ -e $HOME/$file ]; then
     cp -pr $HOME/$file $BACKUP_DIR # backup
     rm -f $HOME/$file
-    echo "$HOME/$fileを削除しました。"
+    echo "Deleted a file: $HOME/$file"
   fi
   ln -s $DOTFILES/$file $file
-  echo "$HOME/$fileをシンボリックリンクで作成しました。"
+  echo "Created symbolic-link $HOME/$file"
   echo;
 done
 
-####################
-#### vim config ####
-####################
+
+# ----- fish shell -----
+
+mkdir -p $HOME/.config/fish
+ary=("config.fish" "fishfile")
+for file in "${ary[@]}"
+do
+  ln -s $DOTFILES/fish/$file $HOME/.config/fish/$file
+done
+
+
+# ----- Vim config -----
+
 echo "-- vim --"
-# neobundle
+# For Neobundle
 PLUGIN_DIR=$HOME/.vim/bundle
 if [ ! -d $PLUGIN_DIR ]; then
   mkdir -p $PLUGIN_DIR
-  echo "$PLUGIN_DIRディレクトリを作成しました。"
+  echo "Created a directory: $PLUGIN_DIR"
 fi
 NEOBUNDLE_DIR=$HOME/.vim/bundle/neobundle.vim
 if [ ! -d $NEOBUNDLE_DIR ]; then
   git clone git://github.com/Shougo/neobundle.vim $NEOBUNDLE_DIR
-  echo "$NEOBUNDLE_DIRディレクトリを作成しました。"
+  echo "Created a directory: $NEOBUNDLE_DIR"
 fi
 echo;
 
-# color
+# For vim theme.
 COLORS_DIR=$HOME/.vim/colors
 if [ ! -d $COLORS_DIR ]; then
   mkdir -p $COLORS_DIR
-  echo "$COLORS_DIRディレクトリを作成しました。"
+  echo "Created a directory: $COLORS_DIR"
 fi
 SYM_MOLOKAI_FILE=$COLORS_DIR/molokai.vim
 MOLOKAI_FILE=$PLUGIN_DIR/molokai/colors/molokai.vim
 if [ ! -f $SYM_MOLOKAI_FILE ]; then
   ln -s $MOLOKAI_FILE $SYM_MOLOKAI_FILE
-  echo "$COLORS_DIR/molokai.vimをシンボリックリンクで作成しました。"
+  echo "Created symbolic-link $COLORS_DIR/molokai.vim"
 fi
 echo;
 
-# NeoBundleInstall
+# Execute NeoBundleInstall.
 $NEOBUNDLE_DIR/bin/neoinstall
-echo "NeoBundleInstallを実行しました"
+echo "Executed NeoBundleInstall"
 
-###########################################
-#### gitconfig                         ####
-####  - ファイルが存在したら削除しない ####
-###########################################
+
+# ----- Local settings of .gitconfig -----
+
 echo "-- gitconfig --"
 GIT_CONFIG=$HOME/dotfiles/gitconfig
 GIT_CONFIG_LOCAL=$GIT_CONFIG/.gitconfig.local
 if [ ! -f $GIT_CONFIG_LOCAL ]; then
   cp -p $GIT_CONFIG/.gitconfig.local.template $GIT_CONFIG_LOCAL
-  echo "$GIT_CONFIG_LOCALファイルを作成しました。"
+  echo "Created a file: $GIT_CONFIG_LOCAL"
 fi
 echo;
+
 
 echo "#######################"
 echo "#### manual config ####"
@@ -102,5 +111,4 @@ echo;
 
 cat $DOTFILES/manual_setup
 echo;
-
 

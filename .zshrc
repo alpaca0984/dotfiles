@@ -23,3 +23,5 @@ export PATH="$PATH:$HOME/dotfiles/bin"
 # マシンごとの設定
 [ -f ${HOME}/dotfiles/zshrc/.zshrc.local ] && source ${HOME}/dotfiles/zshrc/.zshrc.local
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
