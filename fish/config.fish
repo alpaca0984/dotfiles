@@ -1,3 +1,7 @@
+# ----- Key bindings -----
+bind \cr 'fzf'
+
+# ----- Theme settings for bobthefish -----
 set -g theme_display_date no
 set -g theme_display_ruby no
 set -g theme_color_scheme terminal-dark
