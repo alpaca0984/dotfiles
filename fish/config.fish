@@ -1,5 +1,7 @@
 # ----- Key bindings -----
-bind \cr 'fzf'
+if type -q fzf
+  bind \cr fzf
+end
 
 # ----- Theme settings for bobthefish -----
 set -g theme_display_date no
