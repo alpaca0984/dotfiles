@@ -1,3 +1,6 @@
+# ----- Aliases -----
+alias rm "rm -i"
+
 # ----- Key bindings -----
 if type -q fzf
   bind \cr fzf
