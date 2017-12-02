@@ -81,7 +81,7 @@
 [difftool "vim-diff"]
   cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
 [core]
-  editor = /usr/local/bin/vim
+  editor = vim
   excludesfile = ~/.gitignore_global
 [fetch]
   prune = true
