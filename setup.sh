@@ -55,7 +55,8 @@ for file in "${ary[@]}"
 do
   ln -s $DOTFILES/fish/$file $HOME/.config/fish/$file
 done
-
+# Install plugins
+fisher install
 
 # ----- Vim config -----
 
