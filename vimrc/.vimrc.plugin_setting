@@ -44,7 +44,7 @@ let g:neosnippet#snippets_directory='~/dotfiles/snippets'
 " vim-scripts/Align
 "   https://github.com/vim-scripts/Align
 "--------------------------
-" 日本語などの幅広文字に対応するための設定
+" For Japanese language. Determine a string's length accurately.
 let g:Align_xstrlen=3
 
 
@@ -52,18 +52,18 @@ let g:Align_xstrlen=3
 " nathanaelkane/vim-indent-guides
 "   https://github.com/nathanaelkane/vim-indent-guides
 "--------------------------
-" vim立ち上げたときに、自動的にオンにする
+" indent guides enabled by default
 let g:indent_guides_enable_on_vim_startup=1
-" ガイドをスタートするインデントの量
+" which indent level to start showing guides from
 let g:indent_guides_start_level=2
-" ガイドの幅
+" the size of the indent guide
 let g:indent_guides_guide_size = 1
-" 自動カラーを無効にする(下記 色設定が適用されないため)
+" not the plugin automatically calculates the highlight colors
 let g:indent_guides_auto_colors=0
-" 奇数インデントのカラー(ctermbgの値を調整)
-"   - カラーコード表(http://cl.pocari.org/images/vim-256color.png)
+" Colorize odd indents(adjust ctermbg's value)
+"   - Color codes(http://cl.pocari.org/images/vim-256color.png)
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=235
-" 偶数インデントのカラー
+" Colorize even indents
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=237
 
 
@@ -92,37 +92,16 @@ nnoremap :mg  :MemoGrep<CR>
 " scrooloose/nerdcommenter
 "   https://github.com/scrooloose/nerdcommenter
 "--------------------------
-" デフォルトのキーマッピングをオフ
+" Turn the default mappings off
 let g:NERDCreateDefaultMappings = 0
-" コメントアウトした際のスペース数を1に設定
+" Add spaces after comment delimiters by default
 let NERDSpaceDelims = 1
-" コメントアウト、解除
+" Toggle comment out, uncommented
 nmap ,, <Plug>NERDCommenterToggle
 vmap ,, <Plug>NERDCommenterToggle
-" 複数行コメント
+" Toggle comment out multiple lines
 nmap ,s <Plug>NERDCommenterSexy
 vmap ,s <Plug>NERDCommenterSexy
-
-
-"--------------------------
-" alpaca-tc/alpaca_tags
-"   https://github.com/alpaca-tc/alpaca_tags
-"--------------------------
-let g:alpaca_tags#config = {
-                       \    '_' : '-R --sort=yes',
-                       \    'ruby': '--languages=+Ruby',
-                       \ }
-
-" http://kaihar4.com/2014/08/12/vim-ctags.html
-augroup AlpacaTags
-  autocmd!
-  if exists(':AlpacaTags')
-    autocmd BufWritePost Gemfile AlpacaTagsBundle
-    autocmd BufEnter * AlpacaTagsSet
-    " 毎回保存と同時更新する場合はコメントを外す
-    " autocmd BufWritePost * TagsUpdate
-  endif
-augroup END
 
 
 "--------------------------
@@ -132,8 +111,10 @@ augroup END
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'javascript'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_check_on_open = 0 "ファイルオープン時にはチェックをしない
-let g:syntastic_check_on_save = 1 "ファイル保存時にはチェックを実施
+" syntastic in active mode will run syntax checks when buffers are first loaded, as well as on saving
+let g:syntastic_check_on_open = 0
+" skip checks when you issue `:wq`, `:x`, and `:ZZ`
+let g:syntastic_check_on_save = 1
 
 
 "--------------------------
