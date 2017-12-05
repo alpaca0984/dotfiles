@@ -13,22 +13,24 @@ mkdir -p $BACKUP_DIR
 echo "Created a directory: $BACKUP_DIR"
 echo;
 
+
 # ----- Create backup if you want. -----
 
-# for file in * .??*
-# do
-#  case $file in
-#  # These files will be excluded for being taken copies.
-#  "."|".."|"dotfiles"|"backup_home")
-#    echo "This file isn't supposed to be taken a copy: $file"
-#    continue
-#    ;;
-#  esac
-#  # Do backup.
-#  cp -pr $HOME/$file $BACKUP_DIR
-#  echo "Copied a file: $file"
-# done
-# echo;
+for file in * .??*
+do
+ case $file in
+ # These files will be excluded for being taken copies.
+ "."|".."|"dotfiles"|"backup_home")
+   echo "This file isn't supposed to be taken a copy: $file"
+   continue
+   ;;
+ esac
+ # Do backup.
+ cp -pr $HOME/$file $BACKUP_DIR
+ echo "Copied a file: $file"
+done
+echo;
+
 
 # ----- standard dotfiles -----
 
@@ -55,42 +57,15 @@ for file in "${ary[@]}"
 do
   ln -s $DOTFILES/fish/$file $HOME/.config/fish/$file
 done
-# Install plugins
-fisher install
+
 
 # ----- Vim config -----
 
 echo "-- vim --"
-# For Neobundle
-PLUGIN_DIR=$HOME/.vim/bundle
-if [ ! -d $PLUGIN_DIR ]; then
-  mkdir -p $PLUGIN_DIR
-  echo "Created a directory: $PLUGIN_DIR"
+if [ -f $HOME/.vim/autoload/plug.vim ]; then
+  vim +PlugInstall +qall
+  echo "Executed PlugInstall"
 fi
-NEOBUNDLE_DIR=$HOME/.vim/bundle/neobundle.vim
-if [ ! -d $NEOBUNDLE_DIR ]; then
-  git clone git://github.com/Shougo/neobundle.vim $NEOBUNDLE_DIR
-  echo "Created a directory: $NEOBUNDLE_DIR"
-fi
-echo;
-
-# For vim theme.
-COLORS_DIR=$HOME/.vim/colors
-if [ ! -d $COLORS_DIR ]; then
-  mkdir -p $COLORS_DIR
-  echo "Created a directory: $COLORS_DIR"
-fi
-SYM_MOLOKAI_FILE=$COLORS_DIR/molokai.vim
-MOLOKAI_FILE=$PLUGIN_DIR/molokai/colors/molokai.vim
-if [ ! -f $SYM_MOLOKAI_FILE ]; then
-  ln -s $MOLOKAI_FILE $SYM_MOLOKAI_FILE
-  echo "Created symbolic-link $COLORS_DIR/molokai.vim"
-fi
-echo;
-
-# Execute NeoBundleInstall.
-$NEOBUNDLE_DIR/bin/neoinstall
-echo "Executed NeoBundleInstall"
 
 
 # ----- Local settings of .gitconfig -----
