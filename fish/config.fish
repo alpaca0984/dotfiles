@@ -1,5 +1,8 @@
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
 # ----- Aliases -----
 alias rm "rm -i"
+alias ag='ag --pager="less -R"'
 
 # ----- Key bindings -----
 if type -q fzf
