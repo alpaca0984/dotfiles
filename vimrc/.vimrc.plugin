@@ -9,15 +9,7 @@ Plug 'tomasr/molokai'
 
 " Interactive command execution in Vim
 "   https://github.com/Shougo/vimproc.vim
-Plug 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " Unite and create user interfaces
 "   https://github.com/Shougo/unite.vim
@@ -97,11 +89,7 @@ Plug 'alpaca-tc/alpaca_powertabline'
 
 " statusline plugin for vim
 "   https://github.com/powerline/powerline
-Plug 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-
-" Script to patch arrow and symbol glyphs into fonts for usage with Powerline and other compatible plugins.
-"   https://github.com/powerline/fontpatcher
-Plug 'Lokaltog/powerline-fontpatcher'
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " A tree explorer plugin for vim.
 "   https://github.com/scrooloose/nerdtree
