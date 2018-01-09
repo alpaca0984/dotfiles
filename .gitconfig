@@ -62,6 +62,8 @@
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   # mergeの際にconflictが起きたファイルをadd
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  # merge済みbranchを一括削除
+  delete-merged-branch = "!f () { git checkout $1; git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d; };f"
   # grep関連
   gr = grep
   gn = grep -n
