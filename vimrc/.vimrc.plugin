@@ -89,7 +89,7 @@ Plug 'alpaca-tc/alpaca_powertabline'
 
 " statusline plugin for vim
 "   https://github.com/powerline/powerline
-Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'powerline/powerline', { 'branch': 'develop', 'rtp': 'powerline/bindings/vim/' }
 
 " A tree explorer plugin for vim.
 "   https://github.com/scrooloose/nerdtree
