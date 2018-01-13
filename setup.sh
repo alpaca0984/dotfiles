@@ -59,15 +59,6 @@ do
 done
 
 
-# ----- Vim config -----
-
-echo "-- vim --"
-if [ -f $HOME/.vim/autoload/plug.vim ]; then
-  vim +PlugInstall +qall
-  echo "Executed PlugInstall"
-fi
-
-
 # ----- Local settings of .gitconfig -----
 
 echo "-- gitconfig --"
