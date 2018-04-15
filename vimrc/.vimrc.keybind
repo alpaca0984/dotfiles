@@ -15,15 +15,20 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap < <><LEFT>
 
-"ctags
-map <silent><PageDown> <C-]>
-map <silent><PageUp> <C-T>
-map <silent><Home> :tags<cr>
-map <silent><End> :ts<cr>
-"tagsジャンプの時に複数ある時は一覧表示
-nnoremap <C-]> g<C-]>
 "NERDTree
 nnoremap <silent><C-y> :NERDTreeToggle<CR>
+
+
+"----------------------------------------------------
+" GNU GLOBAL(gtags)
+"----------------------------------------------------
+nnoremap <C-g> :Gtags
+nnoremap <C-]> :Gtags <C-r><C-w><CR>
+nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
+nnoremap <C-l> :Gtags -f %<CR>
+nnoremap <C-q> <C-w><C-w><C-w>q
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
 
 
 " --------- split ------------------------------------
