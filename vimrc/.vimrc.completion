@@ -18,3 +18,7 @@ autocmd FileType php  :set dictionary=~/.vim/dictionary/php.dict
 " @see https://github.com/davidhalter/jedi-vim#i-dont-want-the-docstring-window-to-popup-during-completion
 autocmd FileType python setlocal completeopt-=preview expandtab softtabstop=2
 autocmd FileType html setlocal expandtab softtabstop=2
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+

@@ -118,6 +118,10 @@ Plug 'yuku-t/vim-ref-ri'
 "   https://github.com/tpope/vim-endwise
 Plug 'tpope/vim-endwise'
 
+" Vim/Ruby Configuration Files
+"   https://github.com/vim-ruby/vim-ruby
+Plug 'vim-ruby/vim-ruby'
+
 " rails.vim: Ruby on Rails power tools
 "   https://github.com/tpope/vim-rails
 Plug 'tpope/vim-rails'
