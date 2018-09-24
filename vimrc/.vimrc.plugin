@@ -150,5 +150,9 @@ Plug 'ntpeters/vim-better-whitespace'
 "   https://github.com/universal-ctags/ctags
 " Plug 'universal-ctags/ctags'
 
+" Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
+"   https://github.com/udalov/kotlin-vim
+Plug 'udalov/kotlin-vim'
+
 " Initialize plugin system
 call plug#end()
