@@ -19,3 +19,4 @@ set -g theme_title_use_abbreviated_path no
 set -g theme_title_display_user yes
 set -g theme_display_k8s_context no
 
+set -g fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
