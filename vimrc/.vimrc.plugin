@@ -146,5 +146,9 @@ Plug 'ntpeters/vim-better-whitespace'
 "   https://github.com/udalov/kotlin-vim
 Plug 'udalov/kotlin-vim'
 
+" Vim support for editing fish scripts
+"   https://github.com/dag/vim-fish
+Plug 'dag/vim-fish'
+
 " Initialize plugin system
 call plug#end()
