@@ -22,9 +22,13 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 "   https://github.com/Shougo/unite.vim
 Plug 'Shougo/unite.vim'
 
-" Next generation completion framework after neocomplcache
-"   https://github.com/Shougo/neocomplete.vim
-Plug 'Shougo/neocomplete'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " neo-snippet plugin contains neocomplcache snippets source
 "   https://github.com/Shougo/neosnippet.vim
@@ -70,10 +74,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 "   https://github.com/glidenote/memolist.vim
 Plug 'glidenote/memolist.vim'
 
-" Multi-language DBGP debugger client for Vim (PHP, Python, Perl, Ruby, etc.)
-"   https://github.com/joonty/vdebug
-Plug 'joonty/vdebug'
-
 " Vim plugin for intensely orgasmic commenting
 "   https://github.com/scrooloose/nerdcommenter
 Plug 'scrooloose/nerdcommenter'
@@ -90,13 +90,9 @@ Plug 'kana/vim-submode'
 "   https://github.com/airblade/vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
-" alpaca_powertabline
-"   https://github.com/alpaca-tc/alpaca_powertabline
-Plug 'alpaca-tc/alpaca_powertabline'
-
-" statusline plugin for vim
-"   https://github.com/powerline/powerline
-Plug 'powerline/powerline', { 'branch': 'develop', 'rtp': 'powerline/bindings/vim/' }
+" lean & mean status/tabline for vim that's light as air
+"   https://github.com/vim-airline/vim-airline
+Plug 'vim-airline/vim-airline'
 
 " A tree explorer plugin for vim.
 "   https://github.com/scrooloose/nerdtree
@@ -145,10 +141,6 @@ Plug 'chase/vim-ansible-yaml'
 " Better whitespace highlighting for Vim
 "   https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
-
-" A maintained ctags implementation
-"   https://github.com/universal-ctags/ctags
-" Plug 'universal-ctags/ctags'
 
 " Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
 "   https://github.com/udalov/kotlin-vim

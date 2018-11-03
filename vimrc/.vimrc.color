@@ -16,3 +16,4 @@ hi DiffDelete ctermfg=gray ctermbg=black
 hi DiffChange ctermbg=black
 hi DiffAdd ctermbg=black
 hi DiffText ctermbg=darkred
+
