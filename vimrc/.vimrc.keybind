@@ -88,3 +88,4 @@ call submode#map('controllwindow', 'n', '', '<C-h>', '3<C-w><')
 call submode#map('controllwindow', 'n', '', '<C-k>', '3<C-w>+')
 call submode#map('controllwindow', 'n', '', '<C-j>', '3<C-w>-')
 " ----------------------------------------------------
+
