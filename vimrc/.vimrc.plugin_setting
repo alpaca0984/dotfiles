@@ -1,17 +1,23 @@
-"-----------------------
-" Plugin Config
-"-----------------------
-
 "--------------------------
-" vim-scripts/Align
-"   https://github.com/vim-scripts/Align
+" Dark powered asynchronous completion framework for neovim/Vim8
+"   https://github.com/Shougo/deoplete.nvim
 "--------------------------
-" For Japanese language. Determine a string's length accurately.
-let g:Align_xstrlen=3
+let g:deoplete#enable_at_startup = 1
 
 
 "--------------------------
-" nathanaelkane/vim-indent-guides
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+"   https://github.com/airblade/vim-gitgutter
+"--------------------------
+" Key mappings
+nnoremap <silent> ,gt :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gr :<C-u>GitGutterDisable<CR>:<C-u>GitGutterEnable<CR>
+nnoremap <silent> ,gn :<C-u>GitGutterNextHunk<CR>
+nnoremap <silent> ,gp :<C-u>GitGutterPrevHunk<CR>
+
+
+"--------------------------
+" A Vim plugin for visually displaying indent levels in code
 "   https://github.com/nathanaelkane/vim-indent-guides
 "--------------------------
 " indent guides enabled by default
@@ -30,28 +36,17 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=237
 
 
 "--------------------------
-" airblade/vim-gitgutter
-"   https://github.com/airblade/vim-gitgutter
+" HTML5 omnicomplete and syntax
+"   https://github.com/othree/html5.vim
 "--------------------------
-" Key mappings
-nnoremap <silent> ,gt :<C-u>GitGutterToggle<CR>
-nnoremap <silent> ,gr :<C-u>GitGutterDisable<CR>:<C-u>GitGutterEnable<CR>
-nnoremap <silent> ,gn :<C-u>GitGutterNextHunk<CR>
-nnoremap <silent> ,gp :<C-u>GitGutterPrevHunk<CR>
+let g:html5_event_handler_attributes_complete = 1
+let g:html5_rdfa_attributes_complete = 1
+let g:html5_microdata_attributes_complete = 1
+let g:html5_aria_attributes_complete = 1
 
 
 "--------------------------
-" glidenote/memolist.vim
-"   https://github.com/glidenote/memolist.vim
-"--------------------------
-" Key mappings
-nnoremap :mn  :MemoNew<CR>
-nnoremap :ml  :MemoList<CR>
-nnoremap :mg  :MemoGrep<CR>
-
-
-"--------------------------
-" scrooloose/nerdcommenter
+" Vim plugin for intensely orgasmic commenting
 "   https://github.com/scrooloose/nerdcommenter
 "--------------------------
 " Turn the default mappings off
@@ -67,6 +62,29 @@ vmap ,s <Plug>NERDCommenterSexy
 
 
 "--------------------------
+" A tree explorer plugin for vim.
+"   https://github.com/scrooloose/nerdtree
+"--------------------------
+map <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+
+"--------------------------
+" lean & mean status/tabline for vim that's light as air
+"   https://github.com/vim-airline/vim-airline
+"--------------------------
+let g:airline#extensions#tabline#enabled = 1
+
+
+"--------------------------
+" Help folks to align text, eqns, declarations, tables, etc
+"   https://github.com/vim-scripts/Align
+"--------------------------
+" For Japanese language. Determine a string's length accurately.
+let g:Align_xstrlen=3
+
+
+"--------------------------
 " vim-syntastic/syntastic
 "   https://github.com/vim-syntastic/syntastic
 "--------------------------
@@ -77,36 +95,4 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_check_on_open = 0
 " skip checks when you issue `:wq`, `:x`, and `:ZZ`
 let g:syntastic_check_on_save = 1
-
-
-"--------------------------
-" othree/html5.vim
-"   https://github.com/othree/html5.vim
-"--------------------------
-let g:html5_event_handler_attributes_complete = 1
-let g:html5_rdfa_attributes_complete = 1
-let g:html5_microdata_attributes_complete = 1
-let g:html5_aria_attributes_complete = 1
-
-
-"--------------------------
-" scrooloose/nerdtree
-"   https://github.com/scrooloose/nerdtree
-"--------------------------
-map <C-e> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
-
-"--------------------------
-" vim-airline/vim-airline
-"   https://github.com/vim-airline/vim-airline
-"--------------------------
-let g:airline#extensions#tabline#enabled = 1
-
-
-"--------------------------
-" Shougo/deoplete.nvim
-"   https://github.com/Shougo/deoplete.nvim
-"--------------------------
-let g:deoplete#enable_at_startup = 1
 
