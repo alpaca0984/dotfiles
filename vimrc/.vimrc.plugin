@@ -108,17 +108,9 @@ Plug 'thinca/vim-ref'
 "   https://github.com/tomasr/molokai
 Plug 'tomasr/molokai'
 
-" Lightweight support for Ruby's Bundler
-"   https://github.com/tpope/vim-bundler
-Plug 'tpope/vim-bundler'
-
 " endwise.vim: wisely add \"end\" in ruby, endfunction/endif/more in vim script, etc
 "   https://github.com/tpope/vim-endwise
 Plug 'tpope/vim-endwise'
-
-" rails.vim: Ruby on Rails power tools
-"   https://github.com/tpope/vim-rails
-Plug 'tpope/vim-rails'
 
 " Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
 "   https://github.com/udalov/kotlin-vim
