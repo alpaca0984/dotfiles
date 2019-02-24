@@ -2,7 +2,7 @@ Sample of `~/.bash_profile`
 
 ```bash
 export EDITOR="/usr/local/bin/vim"
-# These are neeed by tmux
+# These are needed by tmux
 export POWERLINE_REPOSITORY_ROOT=/usr/local/lib/python2.7/site-packages
 export LC_ALL='ja_JP.UTF-8'
 
