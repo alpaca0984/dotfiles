@@ -841,9 +841,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>395 1398 620 392 -255 900 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>0 374 796 486 0 0 1440 877 </string>
+	<string>488 390 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>316 124 570 377 0 0 1440 877 </string>
+	<string>505 107 906 741 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>572 1551 570 377 -255 900 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1485,7 +1485,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.056696145304568527</real>
+			<real>0.60625793147208129</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -2134,7 +2134,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.056696145304568527</real>
+			<real>0.1986952728426396</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -2155,6 +2155,8 @@
 			<string>/Users/Masataka</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveRequestedFullDiskAccess</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -2213,7 +2215,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-12T06:07:08Z</date>
+	<date>2019-02-27T09:49:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
