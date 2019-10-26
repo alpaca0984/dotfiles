@@ -42,3 +42,10 @@ status --is-interactive; and source (rbenv init -|psub)
 #   brew info texinfo
 set -g fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
 
+# Load rbenv automatically by appending
+# the following to ~/.config/fish/config.fish:
+status --is-interactive; and source (rbenv init -|psub)
+
+# @see https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
+status --is-interactive; and pyenv init - | source
+
