@@ -1,12 +1,10 @@
-fisherman/await
 oh-my-fish/plugin-aws
 edc/bass
 oh-my-fish/theme-bobthefish
-fisherman/docker-completion
 fisherman/fzf
-fisherman/get
 fisherman/getopts
 fisherman/git_util
-fisherman/last_job_id
 oh-my-fish/plugin-vcs
 fisherman/z
+sentriz/fish-pipenv
+jorgebucaran/fish-nvm
