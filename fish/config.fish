@@ -1,4 +1,4 @@
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 
 # ----- Aliases -----
@@ -40,7 +40,7 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # Texinfo
 #   brew info texinfo
-set -g fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
 
 # Load rbenv automatically by appending
 # the following to ~/.config/fish/config.fish:
