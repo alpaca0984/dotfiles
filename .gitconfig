@@ -1,11 +1,22 @@
 [include]
   path = ~/dotfiles/gitconfig/.gitconfig.local
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
 [color]
   diff = auto
   status = auto
   branch = auto
   interactive = auto
   grep = auto
+[diff]
+  tool = vim-diff
+[difftool]
+  prompt = false
+[difftool "vim-diff"]
+  cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+[fetch]
+  prune = true
 [alias]
   st = status -s
   sh = show
@@ -16,7 +27,6 @@
   rbm = rebase master      # masterへのrebaseはよく使うのでalias
   ad = add
   ci = commit
-  cam = commit -a --amend  # 直前のcommitを修正
   co = checkout
   cb = checkout -b
   cm = checkout master
@@ -39,11 +49,9 @@
   log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
   log-al = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
   log-a = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+  logall = log --graph --all --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
+  loga = log --graph --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
   # diff関連
-  logall = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-  logal = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-  loga = log -n 25 --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-  lga = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
   df = diff
   dif = diff
   dm = diff master           # masterとのdiff
@@ -76,14 +84,4 @@
   show-graph = log --graph --abbrev-commit --pretty=oneline
   dt = difftool -d
   dn = diff --name-only
-[diff]
-  tool = vim-diff
-[difftool]
-  prompt = false
-[difftool "vim-diff"]
-  cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore_global
-[fetch]
-  prune = true
+
