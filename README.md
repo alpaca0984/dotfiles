@@ -1,7 +1,7 @@
 Sample of `~/.bash_profile`
 
 ```bash
-export EDITOR="/usr/local/bin/vim"
+export EDITOR="/usr/local/bin/nvim"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # This is needed by tmux. To install it, see https://powerline.readthedocs.io/en/latest/installation/osx.html#python-package
