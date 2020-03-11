@@ -1,7 +1,7 @@
 [include]
   path = ~/dotfiles/gitconfig/.gitconfig.local
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore_global
 [color]
   diff = auto
