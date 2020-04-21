@@ -52,10 +52,6 @@ Plug 'basyura/unite-rails'
 "   https://github.com/chase/vim-ansible-yaml
 Plug 'chase/vim-ansible-yaml'
 
-" Vim support for editing fish scripts
-"   https://github.com/dag/vim-fish
-Plug 'dag/vim-fish'
-
 " Vim script for text filtering and alignment
 "   https://github.com/godlygeek/tabular
 Plug 'godlygeek/tabular'
@@ -131,10 +127,6 @@ Plug 'vim-scripts/Align'
 " Delete/change/add parentheses/quotes/XML-tags/much more with ease
 "   https://github.com/vim-scripts/surround.vim
 Plug 'vim-scripts/surround.vim'
-
-" Syntax checking hacks for vim
-"   https://github.com/vim-syntastic/syntastic
-Plug 'vim-syntastic/syntastic'
 
 " A vim-ref and Unite.vim source for ri.
 "   https://github.com/yuku-t/vim-ref-ri
