@@ -99,7 +99,7 @@ let NERDTreeShowHidden=1
 "   https://github.com/vim-airline/vim-airline
 "--------------------------
 let g:airline#extensions#tabline#enabled = 1
-
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "--------------------------
 " Help folks to align text, eqns, declarations, tables, etc
