@@ -256,7 +256,7 @@
                     }
                 }
             ],
-            "name": "Default profile",
+            "name": "Mac JS Keyboard",
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
