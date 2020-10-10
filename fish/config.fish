@@ -34,16 +34,12 @@ set -g theme_display_k8s_context no
 #   https://github.com/direnv/direnv#fish
 eval (direnv hook fish)
 
-# rbenv
-#   https://github.com/direnv/direnv#fish
-status --is-interactive; and source (rbenv init -|psub)
-
 # Texinfo
 #   brew info texinfo
 set -U fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
 
-# Load rbenv automatically by appending
-# the following to ~/.config/fish/config.fish:
+# rbenv
+#   https://github.com/direnv/direnv#fish
 status --is-interactive; and source (rbenv init -|psub)
 
 # @see https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
