@@ -14,7 +14,7 @@
 [difftool]
   prompt = false
 [difftool "vim-diff"]
-  cmd = vim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+  cmd = nvim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
 [fetch]
   prune = true
 [alias]

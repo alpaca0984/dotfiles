@@ -132,6 +132,10 @@ Plug 'vim-scripts/surround.vim'
 "   https://github.com/yuku-t/vim-ref-ri
 Plug 'yuku-t/vim-ref-ri'
 
+" DirDiff plugin for Vim
+"   https://github.com/will133/vim-dirdiff
+Plug 'will133/vim-dirdiff'
+
 " Initialize plugin system
 call plug#end()
 
