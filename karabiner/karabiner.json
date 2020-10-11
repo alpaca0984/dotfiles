@@ -16,7 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな）",
+                        "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 2)",
                         "manipulators": [
                             {
                                 "from": {
@@ -29,7 +29,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command"
+                                        "key_code": "left_command",
+                                        "lazy": true
                                     }
                                 ],
                                 "to_if_alone": [
@@ -50,7 +51,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "right_command",
+                                        "lazy": true
                                     }
                                 ],
                                 "to_if_alone": [
@@ -123,30 +125,6 @@
                                     {
                                         "key_code": "japanese_eisuu"
                                     },
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Map ctrl + [ to escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
                                     {
                                         "key_code": "escape"
                                     }
@@ -260,7 +238,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [
                 {
                     "from": {
@@ -724,7 +702,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
