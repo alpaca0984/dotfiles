@@ -1,8 +1,15 @@
-# 環境に依存する .gitconfig .zshrcの設定ファイル
-gitconfig/.gitconfig.local
-zshrc/.zshrc.local
+# ----------------------------------------------------------------------------
+# From: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# ----------------------------------------------------------------------------
 
-# ゴミファイル
+# General
 .DS_Store
-thumbs.db
+
+
+# ----------------------------------------------------------------------------
+# From: https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
+# ----------------------------------------------------------------------------
+
+# Swap
 *.swp
+

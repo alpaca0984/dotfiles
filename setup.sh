@@ -62,10 +62,10 @@ done
 # ----- Local settings of .gitconfig -----
 
 echo "-- gitconfig --"
-GIT_CONFIG=$HOME/dotfiles/gitconfig
-GIT_CONFIG_LOCAL=$GIT_CONFIG/.gitconfig.local
+GIT_CONFIG_LOCAL_TEMPLATE=$HOME/dotfiles/gitconfig/.gitconfig.local.template
+GIT_CONFIG_LOCAL=$HOME/.gitconfig.local
 if [ ! -f $GIT_CONFIG_LOCAL ]; then
-  cp -p $GIT_CONFIG/.gitconfig.local.template $GIT_CONFIG_LOCAL
+  cp -p $GIT_CONFIG_LOCAL_TEMPLATE $GIT_CONFIG_LOCAL
   echo "Created a file: $GIT_CONFIG_LOCAL"
 fi
 echo;
