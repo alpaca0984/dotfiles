@@ -1,5 +1,5 @@
 [include]
-  path = ~/dotfiles/gitconfig/.gitconfig.local
+  path = ~/.gitconfig.local
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
