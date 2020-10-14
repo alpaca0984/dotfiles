@@ -76,6 +76,6 @@ echo "#### manual config ####"
 echo "#######################"
 echo;
 
-cat $DOTFILES/manual_setup
+cat $DOTFILES/README.md
 echo;
 

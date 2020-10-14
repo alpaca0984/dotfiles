@@ -65,68 +65,31 @@
                         ]
                     },
                     {
-                        "description": "TerminalまたはMacVimでESCあるいは^[を押したときに日本語入力を英数に切り替える。",
+                        "description": "When press 'ctrl+[', send 'escape' and 'japanese_eisuu'",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^org\\.vim\\.",
-                                            "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com.jetbrains.intellij.ce$",
-                                            "^com\\.google\\.android\\.studio$"
+                                        "keyboard_types": [
+                                            "jis"
                                         ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "japanese_eisuu"
-                                    },
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^org\\.vim\\.",
-                                            "^com\\.microsoft\\.VSCode$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^com.jetbrains.intellij.ce$",
-                                            "^com\\.google\\.android\\.studio$"
-                                        ],
-                                        "type": "frontmost_application_if"
+                                        "type": "keyboard_type_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "control"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "japanese_eisuu"
+                                        "key_code": "escape"
                                     },
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "japanese_eisuu"
                                     }
                                 ],
                                 "type": "basic"
@@ -711,3 +674,4 @@
         }
     ]
 }
+

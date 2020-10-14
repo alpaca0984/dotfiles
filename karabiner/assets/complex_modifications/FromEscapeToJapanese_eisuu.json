@@ -1,69 +1,32 @@
 {
-  "title": "Terminal等でESCあるいは^[で日本語入力を英数に",
+  "title": "(Original) For JANSI settings (http://kenie33-jansi.blogspot.com/)",
   "rules": [
     {
-      "description": "TerminalまたはMacVimでESCあるいは^[を押したときに日本語入力を英数に切り替える。",
+      "description": "When press 'ctrl+[', send 'escape' and 'japanese_eisuu'",
       "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "escape",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "japanese_eisuu"
-            },
-            {
-              "key_code": "escape"
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.",
-                "^com\\.microsoft\\.VSCode$",
-                "^com\\.googlecode\\.iterm2$",
-                "^com.jetbrains.intellij.ce$",
-                "^com\\.google\\.android\\.studio$"
-              ]
-            }
-          ]
-        },
         {
           "type": "basic",
           "from": {
             "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
-                "left_control"
+                "control"
               ]
             }
           },
           "to": [
             {
-              "key_code": "japanese_eisuu"
+              "key_code": "escape"
             },
             {
-              "key_code": "escape"
+              "key_code": "japanese_eisuu"
             }
           ],
           "conditions": [
             {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.",
-                "^com\\.microsoft\\.VSCode$",
-                "^com\\.googlecode\\.iterm2$",
-                "^com.jetbrains.intellij.ce$",
-                "^com\\.google\\.android\\.studio$"
+              "type": "keyboard_type_if",
+              "keyboard_types": [
+                "jis"
               ]
             }
           ]
