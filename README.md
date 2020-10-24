@@ -8,7 +8,7 @@ export LANG=en_US.UTF-8
 export POWERLINE_REPOSITORY_ROOT=/usr/local/lib/python3.7/site-packages
 
 # Change shell.
-files=("/usr/local/bin/fish" "/usr/bin/fish" "$HOME/local/bin/zsh" "/usr/local/bin/zsh" "/usr/bin/zsh" "/bin/zsh")
+files=("/usr/local/bin/fish" "/usr/bin/fish")
 for file in "${files[@]}"
 do
   if [[ -x "$file" ]]; then
