@@ -34,7 +34,7 @@ echo;
 
 # ----- standard dotfiles -----
 
-ary=(".zshrc" ".gitconfig" ".tmux.conf" ".vimrc" ".gemrc")
+ary=(".gitconfig" ".tmux.conf" ".vimrc" ".gemrc")
 for file in "${ary[@]}"
 do
   echo "-- $file --"
