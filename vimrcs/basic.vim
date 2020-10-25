@@ -1,54 +1,140 @@
-" encoding -----------------------------------------
-set termencoding=utf-8
-set encoding=utf-8                               " システムエンコードの値を入れる
-set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp " encodingに指定しなかった文字コードを入れる
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
 
-" file----------------------
-set autoread                        " 更新時自動再読み込み
-set hidden                          " 編集中でも他のファイルを開けるようにする
-" autocmd BufWritePre * :%s/\s\+$//ge " 保存時に行末の空白を除去する
 
-" バックアップ/スワップファイルを作らない------
-set nowritebackup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn on the Wild menu
+set wildmenu
+set wildmode=list:full
+
+" A buffer becomes hidden when it is abandoned
+set hid
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" Show (partial) command in the last line of the screen
+set showcmd
+
+" If in Insert, Replace or Visual mode put a message on the last line
+set showmode
+
+" Print the line number in front of each line
+set number
+
+" Show tabs as CTRL-I is displayed, display $ after end of line
+set list
+set listchars=tab:>\
+
+" When on, the title of the window will be set to the value of 'titlestring'
+set notitle
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=5
+
+" Show unprintable characters hexadecimal as <xx> instead of using ^C and ~C
+set display=uhex
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Support Japanese
+set fileencodings=utf-8,cp932,euc-jp,iso-2022-jp
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
+set nowb
 set noswapfile
 
-" キー操作---------------------------
-set backspace=indent,eol,start        " バックスペースで特殊記号も削除可能に
-set whichwrap=b,s,h,l,<,>,[,]         " カーソルを行頭、行末で止まらないようにする
-set expandtab                         " タブをスペースに置き換える
-set tabstop=2                         " タブ文字を画面上で何文字分に展開するか
-set softtabstop=0                     " タブキー押し下げ時の空白の数。0ならtabstopと同じ
-source $VIMRUNTIME/macros/matchit.vim " 複数文字の対応カッコに%でジャンプ
 
-" インデント-----------------------
-set autoindent   " 自動インデント
-set shiftwidth=2 " autoindent時に挿入されるインデントの幅
-set shiftround   " インデントをshiftwidthの値の倍数に丸める
-set smartindent  " 新しい行を開始した時にインデントを現在の行と同じにする
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
 
-" Complement Command -------------------
-set wildmenu           " コマンド補完を強化
-set wildmode=list:full " リスト表示，最長マッチ
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
-" Search -------------------------------
-set wrapscan   " 最後まで検索したら先頭へ戻る
-set ignorecase " 大文字小文字無視
-set smartcase  " 大文字ではじめたら大文字小文字無視しない
-set incsearch  " インクリメンタルサーチ
-set hlsearch   " 検索文字をハイライト
+set ai   " Auto indent
+set si   " Smart indent
+set wrap " Wrap lines
 
-" View ---------------------------------
-set showmatch        " 括弧の対応をハイライト
-set showcmd          " 入力中のコマンドを表示
-set showmode         " 現在のモードを表示
-set number           " 行番号表示
-set wrap             " 画面幅で折り返す
-set list             " 不可視文字表示
-set listchars=tab:>\ " 不可視文字の表示方法
-set notitle          " タイトル書き換えない
-set scrolloff=5      " 行送り
-set display=uhex     " 印字不可能文字を16進数で表示
 
-" Statusline ---------------------------
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual mode related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around, tabs and buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Status line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Always show the status line
 set laststatus=2
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimgrep searching and cope displaying
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
