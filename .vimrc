@@ -2,17 +2,16 @@
 " Vim configuration
 "---------------------
 
-source ~/dotfiles/vimrc/.vimrc.base
+source ~/dotfiles/vimrcs/basic.vim
 
-source ~/dotfiles/vimrc/.vimrc.keybind
+source ~/dotfiles/vimrcs/keybind.vim
 
-source ~/dotfiles/vimrc/.vimrc.plugin
+source ~/dotfiles/vimrcs/plugins.vim
 
-source ~/dotfiles/vimrc/.vimrc.plugin_setting
+source ~/dotfiles/vimrcs/plugins_config.vim
 
-source ~/dotfiles/vimrc/.vimrc.color
+source ~/dotfiles/vimrcs/color.vim
 
-if filereadable("~/dotfiles/vimrc/.vimrc.local")
-  source ~/dotfiles/vimrc/.vimrc.local
+if filereadable("~/dotfiles/vimrc/local.vim")
+  source ~/dotfiles/vimrcs/local.vim
 endif
-
