@@ -1,14 +1,9 @@
 syntax on           " シンタックスカラーリング
-colorscheme molokai " カラー
 
-"--------------------------
-" color scheme(molokai)
-"--------------------------
+"---------------------------------------
+" Molokai color scheme for Vim
+"   https://github.com/tomasr/molokai
+"---------------------------------------
+colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
-
-"vimdiff color
-hi DiffDelete ctermfg=gray ctermbg=black
-hi DiffChange ctermbg=black
-hi DiffAdd ctermbg=black
-hi DiffText ctermbg=darkred
