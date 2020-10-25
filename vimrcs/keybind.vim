@@ -1,6 +1,3 @@
-"-----------------------
-" Key Mapping
-"-----------------------
 " movement
 inoremap <silent> <C-b> <Left>
 inoremap <silent> <C-n> <Down>
@@ -13,7 +10,3 @@ inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap < <><LEFT>
-
-" NERDTree
-nnoremap <silent><C-y> :NERDTreeToggle<CR>
-

@@ -1,9 +1,5 @@
-"-------------
-" color設定
-"-------------
-
-syntax on                            " シンタックスカラーリング
-colorscheme molokai                  " カラー
+syntax on           " シンタックスカラーリング
+colorscheme molokai " カラー
 
 "--------------------------
 " color scheme(molokai)
@@ -16,4 +12,3 @@ hi DiffDelete ctermfg=gray ctermbg=black
 hi DiffChange ctermbg=black
 hi DiffAdd ctermbg=black
 hi DiffText ctermbg=darkred
-
