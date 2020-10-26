@@ -1,10 +1,4 @@
-"---------------------
-" Vim configuration
-"---------------------
-
 source ~/dotfiles/vimrcs/basic.vim
-
-source ~/dotfiles/vimrcs/keybind.vim
 
 source ~/dotfiles/vimrcs/plugins.vim
 
