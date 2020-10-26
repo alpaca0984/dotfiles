@@ -1,5 +1,3 @@
-syntax on           " シンタックスカラーリング
-
 "---------------------------------------
 " Molokai color scheme for Vim
 "   https://github.com/tomasr/molokai
