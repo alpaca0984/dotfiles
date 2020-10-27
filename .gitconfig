@@ -24,4 +24,3 @@
   logall = log --graph --all --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
   st = status -s
   delete-merged-branch = "!f () { git checkout $1; git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d; };f"
-

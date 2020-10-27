@@ -44,4 +44,3 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # @see https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
 status --is-interactive; and pyenv init - | source
-

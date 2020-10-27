@@ -24,7 +24,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-" neo-snippet plugin contains neocomplcache snippets source
+" The Neosnippet plug-In adds snippet support to Vim
 "   https://github.com/Shougo/neosnippet.vim
 Plug 'Shougo/neosnippet.vim'
 
@@ -138,4 +138,3 @@ Plug 'will133/vim-dirdiff'
 
 " Initialize plugin system
 call plug#end()
-

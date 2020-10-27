@@ -1,18 +1,12 @@
-"---------------------
-" Vim configuration
-"---------------------
+source ~/dotfiles/vimrcs/basic.vim
 
-source ~/dotfiles/vimrc/.vimrc.base
+source ~/dotfiles/vimrcs/plugins.vim
 
-source ~/dotfiles/vimrc/.vimrc.keybind
+source ~/dotfiles/vimrcs/plugins_config.vim
 
-source ~/dotfiles/vimrc/.vimrc.plugin
+" This must be put below plugins.vim because color schemes are installed as plugins
+source ~/dotfiles/vimrcs/color.vim
 
-source ~/dotfiles/vimrc/.vimrc.plugin_setting
-
-source ~/dotfiles/vimrc/.vimrc.color
-
-if filereadable("~/dotfiles/vimrc/.vimrc.local")
-  source ~/dotfiles/vimrc/.vimrc.local
+if filereadable("~/dotfiles/vimrc/local.vim")
+  source ~/dotfiles/vimrcs/local.vim
 endif
-

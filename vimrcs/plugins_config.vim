@@ -1,14 +1,14 @@
-"--------------------------
+"----------------------------------------------------------------
 " Dark powered asynchronous completion framework for neovim/Vim8
 "   https://github.com/Shougo/deoplete.nvim
-"--------------------------
+"----------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
 
-"--------------------------
-" neo-snippet plugin contains neocomplcache snippets source
-"   https://github.com/Shougo/deoplete.nvim
-"--------------------------
+"----------------------------------------------------------------
+" The Neosnippet plug-In adds snippet support to Vim
+"   https://github.com/Shougo/neosnippet.vim
+"----------------------------------------------------------------
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -30,10 +30,10 @@ if has('conceal')
 endif
 
 
-"--------------------------
+"----------------------------------------------------------------
 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 "   https://github.com/airblade/vim-gitgutter
-"--------------------------
+"----------------------------------------------------------------
 " Key mappings
 nnoremap <silent> ,gt :<C-u>GitGutterToggle<CR>
 nnoremap <silent> ,gr :<C-u>GitGutterDisable<CR>:<C-u>GitGutterEnable<CR>
@@ -41,10 +41,10 @@ nnoremap <silent> ,gn :<C-u>GitGutterNextHunk<CR>
 nnoremap <silent> ,gp :<C-u>GitGutterPrevHunk<CR>
 
 
-"--------------------------
+"----------------------------------------------------------------
 " A Vim plugin for visually displaying indent levels in code
 "   https://github.com/nathanaelkane/vim-indent-guides
-"--------------------------
+"----------------------------------------------------------------
 " indent guides enabled by default
 let g:indent_guides_enable_on_vim_startup=1
 " which indent level to start showing guides from
@@ -60,20 +60,20 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=237
 
 
-"--------------------------
+"----------------------------------------------------------------
 " HTML5 omnicomplete and syntax
 "   https://github.com/othree/html5.vim
-"--------------------------
+"----------------------------------------------------------------
 let g:html5_event_handler_attributes_complete = 1
 let g:html5_rdfa_attributes_complete = 1
 let g:html5_microdata_attributes_complete = 1
 let g:html5_aria_attributes_complete = 1
 
 
-"--------------------------
+"----------------------------------------------------------------
 " Vim plugin for intensely orgasmic commenting
 "   https://github.com/scrooloose/nerdcommenter
-"--------------------------
+"----------------------------------------------------------------
 " Turn the default mappings off
 let g:NERDCreateDefaultMappings = 0
 " Add spaces after comment delimiters by default
@@ -86,26 +86,26 @@ nmap ,s <Plug>NERDCommenterSexy
 vmap ,s <Plug>NERDCommenterSexy
 
 
-"--------------------------
+"----------------------------------------------------------------
 " A tree explorer plugin for vim.
 "   https://github.com/scrooloose/nerdtree
-"--------------------------
+"----------------------------------------------------------------
 map <C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 
-"--------------------------
+"----------------------------------------------------------------
 " lean & mean status/tabline for vim that's light as air
 "   https://github.com/vim-airline/vim-airline
-"--------------------------
+"----------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-"--------------------------
+
+"----------------------------------------------------------------
 " Help folks to align text, eqns, declarations, tables, etc
 "   https://github.com/vim-scripts/Align
-"--------------------------
+"----------------------------------------------------------------
 " For Japanese language. Determine a string's length accurately.
 let g:Align_xstrlen=3
-
