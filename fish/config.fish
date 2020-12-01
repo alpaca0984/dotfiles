@@ -10,12 +10,6 @@ if type -q nvim
   alias vim="nvim"
 end
 
-# ----- Key bindings -----
-
-if type -q fzf
-  bind \cr fzf
-end
-
 
 # ----- Theme settings for bobthefish -----
 
@@ -44,3 +38,4 @@ status --is-interactive; and source (rbenv init -|psub)
 
 # @see https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
 status --is-interactive; and pyenv init - | source
+
