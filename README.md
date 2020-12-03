@@ -17,3 +17,16 @@ do
   fi
 done
 ```
+
+In addition, you need to install some dependencies manually.
+
+Install `fisher` from https://github.com/jorgebucaran/fisher
+
+Install python packages:
+```bash
+pip3 install neovim powerline-status
+```
+
+Enable neovim to use `vim.rc`. To do that you need to create `~/.config/nvim/init.vim` file. Detail is here: https://neovim.io/doc/user/nvim.html#nvim-from-vim
+
+Install powerline fonts from https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)
