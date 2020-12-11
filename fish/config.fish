@@ -25,17 +25,13 @@ set -g theme_display_k8s_context no
 # ----- Plugin settings -----
 
 # direnv
-#   https://github.com/direnv/direnv#fish
+#   https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 eval (direnv hook fish)
 
-# Texinfo
-#   brew info texinfo
-set -U fish_user_paths "/usr/local/opt/texinfo/bin" $fish_user_paths
-
 # rbenv
-#   https://github.com/direnv/direnv#fish
+#   `$ rbenv init fish`
 status --is-interactive; and source (rbenv init -|psub)
 
-# @see https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
+# pyenv
+#   https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
 status --is-interactive; and pyenv init - | source
-
