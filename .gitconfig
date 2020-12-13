@@ -10,11 +10,14 @@
   interactive = auto
   grep = auto
 [diff]
-  tool = vim-diff
+  tool = nvimdiff
 [difftool]
   prompt = false
-[difftool "vim-diff"]
-  cmd = nvim -f '+next' '+execute \"DirDiff\" argv(0) argv(1)' $LOCAL $REMOTE
+[difftool "nvimdiff"]
+  cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[mergetool "nvimdiff"]
+  cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [alias]
   br = branch
   ci = commit
