@@ -18,15 +18,24 @@ do
 done
 ```
 
-In addition, you need to install some dependencies manually.
+**In addition, you need to install some dependencies manually.**
+
+Install `brew` https://brew.sh/ and load formulae
+```bash
+$ cd <dotfiles dir>
+$ brew bundle
+```
 
 Install `fisher` from https://github.com/jorgebucaran/fisher
 
 Install python packages:
 ```bash
-pip3 install neovim powerline-status
+$ pyenv install <python-version>
+$ pyenv rehash
+$ pyenv global <python-version>
+$ pip install neovim powerline-status psutil netifaces
 ```
 
-Enable neovim to use `vim.rc`. To do that you need to create `~/.config/nvim/init.vim` file. Detail is here: https://neovim.io/doc/user/nvim.html#nvim-from-vim
-
-Install powerline fonts from https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)
+Install powerline fonts from:
+- https://www.jetbrains.com/lp/mono/
+- https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)

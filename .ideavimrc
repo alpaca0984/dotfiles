@@ -1,0 +1,7 @@
+set visualbell
+set noerrorbells
+set clipboard+=unnamed
+
+imap <C-b> <left>
+imap <C-f> <right>
+imap <C-h> <BS>
