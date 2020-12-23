@@ -37,7 +37,7 @@ status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and pyenv init - | source
 
 
-# ----- environment varialbes -----
+# ----- Environment varialbes -----
 
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8

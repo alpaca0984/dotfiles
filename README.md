@@ -20,7 +20,7 @@ $ cd <dotfiles dir>
 $ brew bundle
 ```
 
-### fish shell
+### Fish shell
 
 Install `fisher` from https://github.com/jorgebucaran/fisher
 
@@ -34,7 +34,7 @@ $ pyenv global <python-version>
 $ pip install neovim powerline-status psutil netifaces
 ```
 
-### fonts
+### Fonts
 
 Install powerline fonts from either of them
 - https://www.jetbrains.com/lp/mono/
