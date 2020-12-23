@@ -1,72 +1,54 @@
-#!/bin/bash
-
-DOTFILES="$HOME/dotfiles"
+#!/bin/zsh
 
 cd $HOME
+DOTFILES="$HOME/dotfiles"
+
 
 # ----- Create backup directory. -----
 
-echo "-- backup --"
 DATE=`date +%Y%m%d_%H%M%S`
-BACKUP_DIR=$HOME/backup_home/$DATE/
+BACKUP_DIR=$HOME/backup_home/$DATE
 mkdir -p $BACKUP_DIR
 echo "Created a directory: $BACKUP_DIR"
 echo;
 
 
-# ----- Create backup if you want. -----
+# ----- Create links with backup -----
 
-for file in * .??*
+FILES=(
+  .gemrc
+  .gitconfig
+  .gitignore
+  .ideavimrc
+  .tmux.conf
+  .vimrc
+  .config/fish/config.fish
+  .config/fish/fish_plugins
+  .config/karabiner/assets
+  .config/karabiner/karabiner.json
+  .config/nvim/init.vim
+  .config/powerline
+)
+
+mkdir -p $HOME/.config/{fish,karabiner,nvim,powerline}
+mkdir -p $BACKUP_DIR/.config/{fish,karabiner,nvim,powerline}
+
+for file in "${FILES[@]}"
 do
- case $file in
- # These files will be excluded for being taken copies.
- "."|".."|"dotfiles"|"backup_home")
-   echo "This file isn't supposed to be taken a copy: $file"
-   continue
-   ;;
- esac
- # Do backup.
- cp -pr $HOME/$file $BACKUP_DIR
- echo "Copied a file: $file"
+  if [ -e $HOME/$file ]; then
+    cp -pr $HOME/$file $BACKUP_DIR/$file
+    rm -rf $HOME/$file
+  fi
+  ln -s $DOTFILES/$file $file
 done
 echo;
 
 
-# ----- standard dotfiles -----
+# ----- Local settings for gitconfig -----
 
-ary=(".gitconfig" ".tmux.conf" ".vimrc" ".gemrc")
-for file in "${ary[@]}"
-do
-  echo "-- $file --"
-  if [ -e $HOME/$file ]; then
-    cp -pr $HOME/$file $BACKUP_DIR # backup
-    rm -f $HOME/$file
-    echo "Deleted a file: $HOME/$file"
-  fi
-  ln -s $DOTFILES/$file $file
-  echo "Created symbolic-link $HOME/$file"
-  echo;
-done
-
-
-# ----- fish shell -----
-
-mkdir -p $HOME/.config/fish
-ary=("config.fish" "fishfile")
-for file in "${ary[@]}"
-do
-  ln -s $DOTFILES/fish/$file $HOME/.config/fish/$file
-done
-
-
-# ----- Local settings of .gitconfig -----
-
-echo "-- gitconfig --"
-GIT_CONFIG_LOCAL_TEMPLATE=$HOME/dotfiles/gitconfig/.gitconfig.local.template
 GIT_CONFIG_LOCAL=$HOME/.gitconfig.local
 if [ ! -f $GIT_CONFIG_LOCAL ]; then
-  cp -p $GIT_CONFIG_LOCAL_TEMPLATE $GIT_CONFIG_LOCAL
-  echo "Created a file: $GIT_CONFIG_LOCAL"
+  cp $DOTFILES/gitconfig/.gitconfig.local $GIT_CONFIG_LOCAL
 fi
 echo;
 

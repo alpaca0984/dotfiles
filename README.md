@@ -1,32 +1,41 @@
-Sample of `~/.bash_profile`
+## Update profile
 
-```bash
-export EDITOR="/usr/local/bin/nvim"
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-# This is needed by tmux. To install it, see https://powerline.readthedocs.io/en/latest/installation/osx.html#python-package
-export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)
-
+Change `~/.bash_profile` or `~/.zprofile` according to your default shell
+```sh
 # Change shell.
-files=("/usr/local/bin/fish" "/usr/bin/fish")
-for file in "${files[@]}"
-do
-  if [[ -x "$file" ]]; then
-    export SHELL=$file
-    exec $SHELL
-  fi
-done
+FISH_SHELL="/usr/local/bin/fish"
+if [ -x "$FISH_SHELL" ]; then
+  export SHELL=$FISH_SHELL
+  exec $FISH_SHELL
+fi
 ```
 
-In addition, you need to install some dependencies manually.
+## Manual operation
+
+### Homebrew
+
+Install from https://brew.sh/ and load formulae
+```bash
+$ cd <dotfiles dir>
+$ brew bundle
+```
+
+### fish shell
 
 Install `fisher` from https://github.com/jorgebucaran/fisher
 
-Install python packages:
+### Python packages
+
+They are required by `nvim` and `tmux`
 ```bash
-pip3 install neovim powerline-status
+$ pyenv install <python-version>
+$ pyenv rehash
+$ pyenv global <python-version>
+$ pip install neovim powerline-status psutil netifaces
 ```
 
-Enable neovim to use `vim.rc`. To do that you need to create `~/.config/nvim/init.vim` file. Detail is here: https://neovim.io/doc/user/nvim.html#nvim-from-vim
+### fonts
 
-Install powerline fonts from https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)
+Install powerline fonts from either of them
+- https://www.jetbrains.com/lp/mono/
+- https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)
