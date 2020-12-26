@@ -16,7 +16,6 @@ echo;
 # ----- Create links with backup -----
 
 FILES=(
-  .gemrc
   .gitconfig
   .gitignore
   .ideavimrc
