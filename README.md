@@ -1,8 +1,8 @@
 ## Update profile
 
-Change `~/.bash_profile` or `~/.zprofile` according to your default shell
+Change `~/.bash_profile` or `~/.zprofile` according to your default shell.
 ```sh
-# Change shell.
+# Change shell
 FISH_SHELL="/usr/local/bin/fish"
 if [ -x "$FISH_SHELL" ]; then
   export SHELL=$FISH_SHELL
@@ -14,28 +14,33 @@ fi
 
 ### Homebrew
 
-Install from https://brew.sh/ and load formulae
-```bash
+Install Homebrew from https://brew.sh/ and load formulae.
+```sh
 $ cd <dotfiles dir>
 $ brew bundle
 ```
 
-### fish shell
+### Fish shell
 
-Install `fisher` from https://github.com/jorgebucaran/fisher
+Since `setup.sh` puts `~/.config/fish/fish_plugins`, we load plugins based on it.
+```sh
+$ curl -sL https://git.io/fisher | source && fisher update
+```
+
+For fisher command, refer https://github.com/jorgebucaran/fisher.
 
 ### Python packages
 
-They are required by `nvim` and `tmux`
-```bash
+They are required by `nvim` and `tmux`.
+```sh
 $ pyenv install <python-version>
 $ pyenv rehash
 $ pyenv global <python-version>
 $ pip install neovim powerline-status psutil netifaces
 ```
 
-### fonts
+### Fonts
 
-Install powerline fonts from either of them
+Install powerline fonts from either of them:
 - https://www.jetbrains.com/lp/mono/
-- https://github.com/powerline/fonts (I personally prefer `Droid Sans Mono for Powerline`)
+- https://github.com/powerline/fonts (I personally like `Droid Sans Mono for Powerline`)

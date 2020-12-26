@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/bin/bash
 
 cd $HOME
-DOTFILES="$HOME/dotfiles"
+DOTFILES=$HOME/dotfiles
 
 
 # ----- Create backup directory. -----
@@ -16,7 +16,6 @@ echo;
 # ----- Create links with backup -----
 
 FILES=(
-  .gemrc
   .gitconfig
   .gitignore
   .ideavimrc
@@ -39,7 +38,7 @@ do
     cp -pr $HOME/$file $BACKUP_DIR/$file
     rm -rf $HOME/$file
   fi
-  ln -s $DOTFILES/$file $file
+  ln -s $DOTFILES/$file $HOME/$file
 done
 echo;
 
