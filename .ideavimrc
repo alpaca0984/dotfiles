@@ -1,7 +1,23 @@
+" @see https://github.com/JetBrains/ideavim#Files
+
+""" Common settings -------------------------
 set visualbell
 set noerrorbells
 set clipboard+=unnamed
 
-imap <C-b> <left>
-imap <C-f> <right>
-imap <C-h> <BS>
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+inoremap <silent> <C-a> <C-o>^
+inoremap <silent> <C-b> <Left>
+inoremap <silent> <C-d> <Del>
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-h> <BS>
+inoremap <silent> <C-k> <C-o>D<Right>
+inoremap <silent> <C-n> <Down>
+inoremap <silent> <C-p> <Up>
+inoremap <silent> <C-u> <C-o>d^
+inoremap <silent> <C-w> <C-o>db
