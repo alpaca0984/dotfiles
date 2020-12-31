@@ -29,8 +29,8 @@ FILES=(
   .config/powerline
 )
 
-mkdir -p $HOME/.config/{fish,karabiner,nvim,powerline}
-mkdir -p $BACKUP_DIR/.config/{fish,karabiner,nvim,powerline}
+mkdir -p $HOME/.config/{fish,karabiner,nvim}
+mkdir -p $BACKUP_DIR/.config/{fish,karabiner,nvim}
 
 for file in "${FILES[@]}"
 do
@@ -40,22 +40,22 @@ do
   fi
   ln -s $DOTFILES/$file $HOME/$file
 done
-echo;
 
 
-# ----- Local settings for gitconfig -----
+# ----- Local settings templates -----
 
-GIT_CONFIG_LOCAL=$HOME/.gitconfig.local
-if [ ! -f $GIT_CONFIG_LOCAL ]; then
-  cp $DOTFILES/gitconfig/.gitconfig.local $GIT_CONFIG_LOCAL
-fi
-echo;
+LOCAL_FILES=(
+  .local/.gitconfig
+)
+
+for file in "${LOCAL_FILES[@]}"
+do
+  if [ ! -f $HOME/$file ]; then
+    cp $DOTFILES/$file $HOME/$file
+  fi
+done
 
 
-echo "#######################"
-echo "#### manual config ####"
-echo "#######################"
-echo;
-
-cat $DOTFILES/README.md
+echo "Setup has been done."
+echo "Some manual operations are required. Please see https://github.com/alpaca0984/dotfiles#manual-operations"
 echo;

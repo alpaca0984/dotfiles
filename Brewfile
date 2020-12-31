@@ -24,6 +24,7 @@ brew "tmux"
 brew "tree"
 
 cask "alfred"
+cask "deepl"
 cask "google-chrome"
 cask "intellij-idea-ce"
 cask "iterm2"

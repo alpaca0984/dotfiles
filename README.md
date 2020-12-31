@@ -10,7 +10,7 @@ if [ -x "$FISH_SHELL" ]; then
 fi
 ```
 
-## Manual operation
+## Manual operations
 
 ### Homebrew
 
@@ -27,7 +27,7 @@ Since `setup.sh` puts `~/.config/fish/fish_plugins`, we load plugins based on it
 $ curl -sL https://git.io/fisher | source && fisher update
 ```
 
-For fisher command, refer https://github.com/jorgebucaran/fisher.
+About fisher command, refer https://github.com/jorgebucaran/fisher.
 
 ### Python packages
 
