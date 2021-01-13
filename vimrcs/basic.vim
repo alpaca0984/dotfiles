@@ -1,6 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Section names and some settings are from https://github.com/amix/vimrc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" References
+" - https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -135,11 +134,18 @@ set laststatus=2
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use mappings that are used by default in readline
+" @see https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+inoremap <silent> <C-a> <Home>
 inoremap <silent> <C-b> <Left>
+inoremap <silent> <C-d> <Del>
+inoremap <silent> <C-e> <End>
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-h> <BS>
+inoremap <silent> <C-k> <C-o>D<Right>
 inoremap <silent> <C-n> <Down>
 inoremap <silent> <C-p> <Up>
-inoremap <silent> <C-f> <Right>
-inoremap <silent> <C-d> <Del>
+inoremap <silent> <C-u> <C-o>d^
+inoremap <silent> <C-w> <C-o>db
 
 " Map auto complete of (, ", ', [
 inoremap $1 ()<esc>i
@@ -148,18 +154,3 @@ inoremap $3 {}<esc>i
 inoremap $4 {<esc>o}<esc>O
 inoremap $q ''<esc>i
 inoremap $e ""<esc>i
-
-" Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-
-" Move window
-nmap <Space> <C-w>w
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l

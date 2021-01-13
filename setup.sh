@@ -46,6 +46,7 @@ done
 
 LOCAL_FILES=(
   .local/.gitconfig
+  .local/config.fish
 )
 
 for file in "${LOCAL_FILES[@]}"

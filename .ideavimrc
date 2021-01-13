@@ -1,19 +1,42 @@
-" @see https://github.com/JetBrains/ideavim#Files
+" References
+" - https://github.com/JetBrains/ideavim#Files
+
 
 """ Common settings -------------------------
 set visualbell
 set noerrorbells
 set clipboard+=unnamed
 
+
 """ Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
 set idearefactormode=keep
 
-""" Mappings --------------------------------
-inoremap <silent> <C-a> <C-o>^
+
+""" Idea specific keymap --------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>d <Action>(Debug)
+map <leader>r <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+
+
+""" Insert mode keymap ----------------------
+inoremap <silent> <C-a> <Home>
 inoremap <silent> <C-b> <Left>
 inoremap <silent> <C-d> <Del>
+inoremap <silent> <C-e> <End>
 inoremap <silent> <C-f> <Right>
 inoremap <silent> <C-h> <BS>
 inoremap <silent> <C-k> <C-o>D<Right>

@@ -6,31 +6,6 @@ let g:deoplete#enable_at_startup = 1
 
 
 "----------------------------------------------------------------
-" The Neosnippet plug-In adds snippet support to Vim
-"   https://github.com/Shougo/neosnippet.vim
-"----------------------------------------------------------------
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-
-"----------------------------------------------------------------
 " A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 "   https://github.com/airblade/vim-gitgutter
 "----------------------------------------------------------------
@@ -90,7 +65,7 @@ vmap ,s <Plug>NERDCommenterSexy
 " A tree explorer plugin for vim.
 "   https://github.com/scrooloose/nerdtree
 "----------------------------------------------------------------
-map <C-e> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 
