@@ -24,14 +24,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-" The Neosnippet plug-In adds snippet support to Vim
-"   https://github.com/Shougo/neosnippet.vim
-Plug 'Shougo/neosnippet.vim'
-
-" The standard snippets repository for neosnippet
-"   https://github.com/Shougo/neosnippet-snippets
-Plug 'Shougo/neosnippet-snippets'
-
 " Unite and create user interfaces
 "   https://github.com/Shougo/unite.vim
 Plug 'Shougo/unite.vim'
