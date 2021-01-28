@@ -44,3 +44,4 @@ inoremap <silent> <C-n> <Down>
 inoremap <silent> <C-p> <Up>
 inoremap <silent> <C-u> <C-o>d^
 inoremap <silent> <C-w> <C-o>db
+inoremap <silent> <S-Space> <Space>
